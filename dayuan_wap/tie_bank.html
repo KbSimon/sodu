@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>设置银行卡</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="网贷大院投资理财">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+</head>
+<body>
+	<div class="filter_bg">
+		<div class="filter_bj">
+			<p style="font-size:.2rem;height: .8rem;line-height: .8rem;text-indent: .3rem;">请绑定持卡人本人的银行卡</p>
+			<ul class="ask_rebate_bg">
+				<li>
+					<div class="" style="width: 30%;">持卡人</div>
+					<div class="" style="width: 70%;">
+						<input type="text" name="username" maxlength="16" id="username" placeholder="请填写真实姓名" class="plat_reg_num" style="text-align: left;">
+					</div>
+				</li>
+				<li>
+					<div class=""  style="width: 30%;">手机号</div>
+					<div class=""  style="width: 70%;">
+						<input type="button" name="phone" class="phone" id="phone" maxlength="16" value=""  class="plat_reg_num" style="text-align: left;font-size: .3rem;text-indent: 0;">
+					</div>
+				</li>
+				<li>
+					<div class="" style="width: 30%;">选择银行</div>
+					<div style="width: 70%;" id="xz_bank">
+						<input type="button" name="" value="中国银行" class="inves_time" style="text-align: left;padding-left: 0;">
+						<img class="arrow_invest" src="img/detail_arrow.png">
+					</div>
+				</li>
+				<li>
+					<div class="" style="width: 30%;">卡号</div>
+					<div class="" style="width: 70%;">
+						<input type="text" name="bank_num" class="bank_num" id="bank_num" maxlength="16" placeholder="请输入银行卡卡号" class="plat_reg_num" style="text-align: left; font-size: .3rem;">
+					</div>
+				</li>
+			</ul>
+			<div class="rebate_cue">
+				备注：请确保手机号与银行卡预留手机号一致
+			</div>
+			<div class="ask_submit_wrap" style="margin: .2rem auto 0 auto;">
+				<button type="button" class="ask_submit">保存</button>
+			</div>
+		</div>
+	</div>
+	<div id="sel_bank" class="sel_bank">
+		<div class="sel_inner_bg">
+			<div class="bank_sel">选择银行卡</div>
+			<form class="bank_form">
+					
+			</form>
+			<div class="bank_sel_footer">
+				<div>
+					<a href="javascript:void(0)" class="cancel_btn">取消</a>
+				</div>
+				<div>
+					<a href="avascript:void(0)"  class="confirm_btn" style="color: #D6B761;border-left: .01rem solid #f2f2f2;">确定</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	 <!--错误提示-->
+     <div class="alertDark J_alertTip" style="display: none;width:4.5rem;left: 38%; "></div>
+	<script>
+		var bankName;
+		var userId = localStorage.getItem("userId");
+		var phone = localStorage.getItem("phone");
+		var id = localStorage.getItem("id");
+		var username = /^[\u4E00-\u9FA5A-Za-z]+$/;
+		var bank = /^([1-9]{1})(\d{14}|\d{18})$/;
+		$('#phone').attr('value',phone);
+		 // 错误提示
+          function alertDark(e){
+             $('.J_alertTip').show();
+             $('.J_alertTip').html(e);
+             setTimeout("$('.J_alertTip').hide(300)",1000);
+          }
+          //银行卡验证
+          function luhnCheck(bankno){
+	      	var lastNum=bankno.substr(bankno.length-1,1);//取出最后一位（与luhn进行比较）
+	  
+	      var first15Num=bankno.substr(0,bankno.length-1);//前15或18位
+	      var newArr=new Array();
+	      for(var i=first15Num.length-1;i>-1;i--){    //前15或18位倒序存进数组
+	          newArr.push(first15Num.substr(i,1));
+	      }
+	      var arrJiShu=new Array();  //奇数位*2的积 <9
+	      var arrJiShu2=new Array(); //奇数位*2的积 >9
+	      
+	      var arrOuShu=new Array();  //偶数位数组
+	      for(var j=0;j<newArr.length;j++){
+	          if((j+1)%2==1){//奇数位
+	              if(parseInt(newArr[j])*2<9)
+	              arrJiShu.push(parseInt(newArr[j])*2);
+	              else
+	              arrJiShu2.push(parseInt(newArr[j])*2);
+	          }
+	          else //偶数位
+	          arrOuShu.push(newArr[j]);
+	      }
+	      
+	      var jishu_child1=new Array();//奇数位*2 >9 的分割之后的数组个位数
+	      var jishu_child2=new Array();//奇数位*2 >9 的分割之后的数组十位数
+	      for(var h=0;h<arrJiShu2.length;h++){
+	          jishu_child1.push(parseInt(arrJiShu2[h])%10);
+	          jishu_child2.push(parseInt(arrJiShu2[h])/10);
+	     }        
+	      
+	      var sumJiShu=0; //奇数位*2 < 9 的数组之和
+	      var sumOuShu=0; //偶数位数组之和
+	      var sumJiShuChild1=0; //奇数位*2 >9 的分割之后的数组个位数之和
+	      var sumJiShuChild2=0; //奇数位*2 >9 的分割之后的数组十位数之和
+	      var sumTotal=0;
+	      for(var m=0;m<arrJiShu.length;m++){
+	          sumJiShu=sumJiShu+parseInt(arrJiShu[m]);
+	     }
+	     
+	     for(var n=0;n<arrOuShu.length;n++){
+	         sumOuShu=sumOuShu+parseInt(arrOuShu[n]);
+	     }
+	     
+	     for(var p=0;p<jishu_child1.length;p++){
+	         sumJiShuChild1=sumJiShuChild1+parseInt(jishu_child1[p]);
+	         sumJiShuChild2=sumJiShuChild2+parseInt(jishu_child2[p]);      
+	     }      
+	      //计算总和
+	      sumTotal=parseInt(sumJiShu)+parseInt(sumOuShu)+parseInt(sumJiShuChild1)+parseInt(sumJiShuChild2);
+	      
+	      //计算luhn值
+	      var k= parseInt(sumTotal)%10==0?10:parseInt(sumTotal)%10;        
+	      var luhn= 10-k;
+	      
+	      if(lastNum==luhn){
+	          console.log("验证通过");
+	          return true;
+	      }else{
+	         layer.msg("银行卡号必须符合luhn校验");
+	          return false;
+	      }        
+ 		}
+
+ function CheckBankNo(bankno) {
+      var bankno = $('.bank_num').val().replace(/\s/g,'');
+      if(bankno == "") {
+          alertDark("请填写银行卡号");
+          return false;
+      }
+      if(bankno.length < 16 || bankno.length > 19) {
+          alertDark("银行卡号长度必须在16到19之间");
+          return false;
+      }
+      var num = /^\d*$/;//全数字
+      if(!num.exec(bankno)) {
+          alertDark("银行卡号必须全为数字");
+          return false;
+      }
+      //开头6位
+      var strBin = "10,18,30,35,37,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,58,60,62,65,68,69,84,87,88,94,95,98,99";
+      if(strBin.indexOf(bankno.substring(0, 2)) == -1) {
+          alertDark("银行卡号开头6位不符合规范");
+          return false;
+      }
+      //Luhn校验
+      if(!luhnCheck(bankno)){
+          return false;
+      }
+     
+  }
+		function check(){
+			if($('#username').val() ==''){
+				alertDark('用户名不能为空!');
+                    return false;
+			}// 判断用户名格式
+            else if (!username.test($("#username").val())) {
+                alertDark("只能输入中文和英文！");
+                return false;
+            }
+            CheckBankNo();
+            return true;
+               	
+		}
+		$('.ask_submit_wrap').click(function(){
+			if(!check()){
+                return false;
+            }
+			$.ajax({
+				type: 'post',
+				url: 'http://47.96.80.242:8080/wddy/api/h5/act/mine/bank/setting',
+				dataType: 'json',
+				data: {
+					"userName": $("#username").val(),
+					"phone":  $('#phone').val(),
+					"bank":  "中国银行",
+					"cardNo": $('.bank_num').val(),
+					"userId": userId
+				},
+				success: function(data){
+					console.log(data);
+					window.location.href = 'product_detail.html?id='+id;
+				},
+				error: function(){
+
+				}
+			});
+		})
+		
+		function sels_bank(){
+			$.ajax({
+				type: 'get',
+				url: 'http://47.96.80.242:8080/wddy/api/h5/getAllBankName',
+				dataType: 'json',
+				data: {},
+				success: function(data){
+					console.log(data);
+					return false;
+					console.log(data.data.bankList[0]);
+					var bank_html = '';
+					if(data.code ==200){
+						for(var i = 0; i<data.data.bankList.length;i++){
+						bank_html +=`<div class="sel_1">
+						        <input id="item`+i+`" type="radio" class="bank_1" name="item" value="`+data.data.bankList[i]+`">
+						        <label for="item`+i+`"></label>
+						        <span class="bank_name">`+data.data.bankList[i]+`</span>
+						    </div>`;
+				    		$('.bank_form').html(bank_html);
+						    $('.bank_form').find(':radio').click(function() {
+								console.log($(this).val());
+								if($(this).val() == '中国银行'){
+		   							bankName = '中国银行';
+		   						}
+		   						if($(this).val() == '工商银行'){
+		   							bankName = '工商银行';
+		   						}
+		   						if($(this).val() == '农业银行'){
+		   							bankName = '农业银行';
+		   						}
+		   						if($(this).val() == '建设银行'){
+		   							bankName = '建设银行';
+		   						}
+		   						if($(this).val() == '邮政储蓄银行'){
+		   							bankName = '邮政储蓄银行';
+		   						}
+		   						if($(this).val() == '交通银行'){
+		   							bankName = '交通银行';
+		   						}
+		   						if($(this).val() == '招商银行'){
+		   							bankName = '招商银行';
+		   						}
+		   						if($(this).val() == '浦发银行'){
+		   							bankName = '浦发银行';
+		   						}
+							});
+						}
+					}else{
+						alertDark(data.msg);
+					}
+					
+				},
+				error: function(){
+
+				}
+			})
+			$('.confirm_btn').click(function(){
+				$('.inves_time').attr('value',bankName);
+				$('#sel_bank').hide();
+
+			})
+		}
+		sels_bank();
+		$('#xz_bank').click(function(){
+			$('#sel_bank').show();
+		});
+		$('.cancel_btn').click(function(){
+			$('#sel_bank').hide();
+		})
+	</script>
+</body>
+</html>

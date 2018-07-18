@@ -1,0 +1,250 @@
+@charset "utf-8";
+.messagesDetails {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+
+/* 左侧 */
+
+.messagesDetails_left {
+    width: 790px;
+    float: left;
+}
+
+.messagesDetails_text{
+    font-size: 16px;
+}
+
+.messagesDetails_nav {
+    font-size: 22px;
+    color: #e4c760;
+    margin: 20px 0 0 0;
+}
+
+.messagesDetails_nav>img {
+    margin-top: -30px;
+}
+
+.messagesDetails_nav>p>a{
+    color: #e4c760;
+}
+
+
+.subhead>li{
+    float: left;
+    overflow: hidden;
+}
+
+.state_div>div{
+    float: left;
+    padding: 0 5px;  
+    font-size: 11px;
+    border-radius: 2px;
+    padding: 0 5px;
+    margin: 10px 10px 0 0;
+    color: rgba(136, 136, 136, 0.75);
+    border: solid 1px rgba(181, 181, 181, 0.75);
+}
+
+.state_number{
+    margin: 10px 0 10px 0;
+}
+
+.state_number{
+    float: left;
+}
+
+.state_number_left>p,
+.state_number_right>p{
+    font-size: 14px;
+    float: left;
+    color: rgba(50, 50, 50, 0.6);
+}
+
+/* 详情 */
+.messagesDetails_content{
+    margin: -10px 0 20px 0;
+    padding: 25px 25px 30px 20px;
+}
+
+.messagesDetails_content {
+    width: 790px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.messagesDetails_title{
+    font-size: 24px;
+    color: #323232;
+}
+
+.date{
+    margin: 0 10px 0 5px;
+}
+
+.messagesDetails_text{
+   width: 745px;
+   overflow: hidden;
+   text-align: justify;
+}
+
+.messagesDetails_text>p{
+    color: #323232;
+    text-indent: 2em;
+    text-align: justify;
+    padding: 0 0 20px 0;
+}
+
+/* 相关阅读 */
+.correlation_title{
+    width: 71px;
+    height: 45px;
+    margin: 15px 0 5px 0;
+    background: url("../images/messagesDetails/correlation.png") center no-repeat;
+}
+
+.correlation_ul>li{
+    overflow: hidden;
+    color: #323232;
+    padding: 0 0 5px 0;
+}
+
+.correlation_left{
+    float: left;
+}
+
+.correlation_right{
+    float: right;
+}
+
+.correlation_img>li{
+    float: left;
+    width: 236px;
+    height: 172px;
+    position: relative;
+    margin: 25px 0 0 0;
+    background: url("../images/messagesDetails/viewpoint.png") center no-repeat;
+}
+
+.correlation_img>li:nth-child(2){
+    margin: 25px 20px 0 15px;
+}
+
+.correlation_img>li>div{
+    bottom: 0;
+    color: #fff;
+    height: 34px;
+    width: 236px;
+    text-align: center;
+    line-height: 34px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 右侧 */
+
+.messagesDetails_right {
+    width: 380px;
+    float: right;
+}
+
+/* 今日头条 */
+
+.today {
+    float: right;
+    width: 380px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.today_title {
+    width: 315px;
+    float: right;
+    font-size: 18px;
+    color: #323232;
+}
+
+.today_bottom{
+    padding: 5px 10px 20px 10px;
+}
+
+.state_text,
+.todayNew02_text {
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    color: rgba(50, 50, 50, 0.6);
+}
+
+
+.todayNew02_title {
+    font-size: 18px;
+    color: #323232;
+    cursor: pointer;
+    margin: 10px 0 5px 0;
+}
+
+.todayNew02_text {
+    max-height: 104px;
+    line-height: 21px;
+    text-align: justify;
+    -webkit-line-clamp: 5;
+}
+
+/* 热门排行 */
+
+.hot_rank {
+    width: 380px;
+    float: right;
+    height: 342px;
+    margin: 10px 0 30px 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.hot_rank_top {
+    width: 380px;
+    height: 46px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 46px;
+    border-bottom: 2px solid #e4c760;
+}
+
+.hot_ul {
+    padding: 15px 20px 0 10px;
+}
+
+.hot_ul>li {
+    float: left;
+    width: 350px;
+    overflow: hidden;
+    margin: 10px 0 0 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.hot_icon {
+    width: 24px;
+    height: 24px;
+    float: left;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+    line-height: 24px;
+    background: url("../images/messages/new_icon.png") center no-repeat;
+}
+
+.hot_ul>li>p {
+    float: left;
+    width: 315px;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(50, 50, 50, 0.8);
+}

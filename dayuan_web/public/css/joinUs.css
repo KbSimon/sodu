@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+@font-face{
+    font-family: pingpang;
+    src: url("../fonts/PingFang-Jian-ChangGuiTi-2.ttf");
+}
+
+h3,
+h4,
+h5,
+h6{
+    font-weight: normal;
+}
+
+.joinUs{
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+}
+
+.banner{
+    height: 415px;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images//joinUs/banner.png") center no-repeat;
+    background-size: 100% 100%;
+}
+
+.joinUs_content{
+    width: 1200px;
+    padding: 50px 0 30px 0;
+    background: #fff;
+    margin: -125px auto 50px auto;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* 顶部 */
+.joinUs_headline{
+    text-align: center;
+}
+
+.joinUs_headline>h3{
+    font-size: 30px;
+}
+
+.joinUs_headline>p{
+    font-size: 18px;
+    padding: 20px 0 0 0;
+}
+
+/* 福利 */
+.boon_ul{
+    width: 1110px;
+    height: 150px;
+    margin: -10px auto 0 auto; 
+    border-bottom: 1px solid #ddd;
+    background: url("../images/joinUs/boon.png") center no-repeat;
+}
+
+
+/* 岗位 */
+.jobs{
+    width: 640px;
+    height: 40px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+  
+}
+
+.jobs>li{
+    float: left;
+    width: 130px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    background: #D6B761;  
+}
+
+.jobs>li:not(:last-of-type){
+    margin-right: 40px;
+}
+
+/* 岗位详情 */
+.jobs_ul{
+    padding: 0 50px;
+}
+
+.jobs_ul>li{
+    width: 550px;
+    float: left;
+    height: 480px;
+    margin: 40px 0 0 0;
+}
+
+.jobs_ul>li:nth-child(1),
+.jobs_ul>li:nth-child(2){
+    border-bottom: 1px solid #ddd;
+}
+
+.jobs_ul>li:nth-child(2n+1){
+    padding-right: 85px;
+}
+
+.jobs_ul>li>h4{
+    color: #d6b761;
+    font-size: 18px;
+    font-family: pingpang;
+}
+
+.jobs_ul>li>h6{
+    font-size: 12px;
+    color: #666666;
+}
+
+.jobs_ul>li>h5{
+    color: #d6b761;
+    font-size: 14px;
+}
+
+.jobs_duty,
+.jobs_need{
+    padding: 20px 0 0 0;
+}
+
+.jobs_ul>li>p{
+    line-height: 30px;
+}
+
+.email{
+    font-size: 20px;
+    text-align: center;
+}
+
+.email>span{
+    color: #d6b761;
+}
+

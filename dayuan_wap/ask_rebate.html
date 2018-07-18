@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>申请返利</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="网贷大院投资理财">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
+</head>
+<body>
+	<div class="filter_bg">
+		<div class="filter_bj">
+			<ul class="ask_rebate_bg">
+				<li>
+					<div class="">返利快捷入口</div>
+					<div class="rebate_enter">小九金服</div>
+				</li>
+				<li>
+					<div class="">注册手机号</div>
+					<div class="">
+						<input type="text" name="" maxlength="11" placeholder="活动平台的注册手机号" class="plat_reg_num">
+					</div>
+				</li>
+				<li>
+					<div class="">实际投资金额</div>
+					<div>
+						<input type="text" name="" class="fact_invest" placeholder="0.00">元
+					</div>
+				</li>
+				<li>
+					<div class="">投资时间</div>
+					<div class="">
+						<input type="button" name="" value="请选择" class="inves_time">
+						<img class="arrow_invest" src="img/detail_arrow.png">
+					</div>
+				</li>
+				<li>
+					<div class="">投资类型</div>
+					<div class="">
+						<input type="button" name="" value="请选择" class="inves_time invest_type">
+						<img class="arrow_invest" src="img/detail_arrow.png">
+					</div>
+				</li>
+				<li>
+					<div class="">投资期限</div>
+					<div class="">
+						<input type="text" name="" class="fact_invest" placeholder="">天
+					</div>
+				</li>
+			</ul>
+			<div class="rebate_cue">
+				备注：投资完成后，我们需要根据您的申请返利订单信息进行结算返利，返利金额请在 <span style="color: #E23438;">“我的-我的钱包”</span>页面进行查看及提现。请确保平台信息无误。
+			</div>
+			<div class="ask_submit_wrap">
+				<button type="button" class="ask_submit">提交</button>
+			</div>
+		</div>
+	</div>
+	<div class="invest_date_wrap">
+		<div id="datePlugin"></div>
+	</div>
+	 <!--错误提示-->
+    <div class="alertDark J_alertTip" style="display: none;width: 5rem;left: 35%;"></div>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/date.js"></script>
+	<script>
+		$(function(){	
+			$('#beginTime').date();
+			$('#endTime').date({theme:"datetime"});
+		});
+		 // 错误提示
+        function alertDark(e){
+            $('.J_alertTip').show();
+            $('.J_alertTip').html(e);
+            setTimeout("$('.J_alertTip').hide(300)",1000);
+        }
+		function check(){
+			var  reg_money = /^(?!0+(?:\.0+)?$)(?:[1-9]\d*|0)(?:\.\d{1,2})?$/;
+			 // 判断手机号是否为空
+           if ($(".plat_reg_num").val() === "") {
+                alertDark('手机号不能为空!');
+                return false;
+           }
+            // 判断手机格式
+           else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($(".plat_reg_num").val()) || $(".plat_reg_num").val().length < 11) {
+                alertDark("手机号码格式不正确！");
+                return false;
+           }//检查投资金额
+           else if($('.fact_invest').val() == ''){
+           		alertDark('投资金额不能为空!');
+                return false;
+           } //只允许输入数字和保留两位小数的浮点型数
+           else if(!reg_money.test($('.fact_invest').val())){
+           	  	alertDark('请您输入的金额为正整数或最多为两位小数的浮点数');
+   			    return false;
+           }//判断天数
+           else if(!/[1-31]/.test($('.fact_invest').val())){
+           		alertDark('日期无效!');
+           		return false;
+           }
+           return true;
+		}
+		$('.ask_submit').click(function(){
+			if(!check()){
+				return false;
+			}
+		});
+
+	</script>
+</body>
+</html>

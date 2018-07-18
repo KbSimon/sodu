@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>返利红包</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="网贷大院投资理财">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
+    <script src="js/jquery.touchSlider.js"></script>
+    <script src="js/jquery.event.drag.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+</head>
+<body>
+	<div class="filter_bg">
+		<div class="filter_bj">
+			<div class="banner">
+			   	<div id="slide" class="slide index-slide">
+					<!-- 轮播图片数量可自行增减 -->
+				<!-- 	<div class="img"><img src="img/banner.png"/></div>
+					<div class="slide-bt"></div> -->
+				</div>
+			</div>
+			<ul class="horn_cue">
+				<li class="horn_img">
+					<img src="img/horn.png" class="horn_pic">
+				</li>
+				<li class="text_roll">
+					<div id="news" style="height: .83rem;overflow:hidden;line-height: .83rem;">
+					    <ul style="margin-top:0!important;width: 100%;height: .83rem">
+					    </ul>
+					</div>
+				</li>
+			</ul>
+			<div class="order_style_box">
+				<div>
+					<a href="rebate_packet.html">默认排序</a>
+				</div>
+				<div>
+					<a href="rebate_packet_1.html">热度</a>
+				</div>
+				<div >
+					<a href="rebate_packet_2.html">回报</a>
+				</div>
+				<!-- <div  class="active sx_filter">
+					<a href="#">
+						<span>筛选</span>
+						<b class="filter_icon"></b>
+					</a>
+				</div> -->
+			</div>
+			<div class="order_style_tab" id="wrapper_1">
+				<div class="default" id="scroller">
+					<ul>
+					</ul>
+					<div class="more" id="more" style="display: block;"><i class="pull_icon"></i><span>上拉加载...</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="filter_mark">
+		<div class="filter_model">
+			<form class="filter_form">
+					<p>平台背景</p>
+				    <div>
+				        <input id="item1" type="radio" name="item" value="不限">
+				        <label for="item1">不限</label>
+				    </div>
+				    <div>
+				        <input id="item2" type="radio" name="item" value="国资系">
+				        <label for="item2">国资系</label>
+				    </div>
+				    <div>
+				        <input id="item3" type="radio" name="item" value="上市系">
+				        <label for="item3">上市系</label>
+				    </div>
+				    <div>
+				        <input id="item4" type="radio" name="item" value="风投系">
+				        <label for="item4" class="sel_down">风投系</label>
+				    </div>
+				    <div>
+				        <input id="item5" type="radio" name="item" value="民营系">
+				        <label for="item5" class="sel_down">民营系</label>
+				    </div>
+				</form>
+				<form>
+					<p style="clear: both;">平台年华</p>
+					 <div>
+				        <input id="item6" type="radio" name="item" value="不限">
+				        <label for="item6">不限</label>
+				    </div>
+				    <div>
+				        <input id="item7" type="radio" name="item" value="10%以下">
+				        <label for="item7">10%以下</label>
+				    </div>
+				    <div>
+				        <input id="item8" type="radio" name="item" value="10%-15%">
+				        <label for="item8">10%-15%</label>
+				    </div>
+				    <div>
+				        <input id="item9" type="radio" name="item" value="15%-20%">
+				        <label for="item9"  class="sel_down">15%-20%</label>
+				    </div>
+				    <div>
+				        <input id="item10" type="radio" name="item" value="20%以上">
+				        <label for="item10"  class="sel_down">20%以上</label>
+				    </div>
+				</form>
+				<form>
+					<p style="clear: both;">投资期限</p>
+					<div>
+				        <input id="item11" type="radio" name="item" value="不限">
+				        <label for="item11">不限</label>
+				    </div>
+				    <div>
+				        <input id="item12" type="radio" name="item" value="1个月以下">
+				        <label for="item12">1个月以下</label>
+				    </div>
+				    <div>
+				        <input id="item13" type="radio" name="item" value="1-3个月">
+				        <label for="item13" >1-3个月</label>
+				    </div>
+				   <div>
+				        <input id="item14" type="radio" name="item" value="3-6个月">
+				        <label for="item14"  class="sel_down">3-6个月</label>
+				    </div>
+				    <div>
+				        <input id="item15" type="radio" name="item" value="6-12个月">
+				        <label for="item15"  class="sel_down">6-12个月</label>
+				    </div>
+				    <div>
+				        <input id="item16" type="radio" name="item" value="12个月以上">
+				        <label for="item16"  class="sel_down">12个月以上</label>
+				    </div>
+				</form>
+		</div>
+		<ul class="apply_nonstop" id="apply_nonstop">
+			<li class="appication_rebate">
+				<a href="">
+					重置
+				</a>
+			</li>
+			<li class="through_reg active">
+				<a href="#">
+					确定
+				</a>
+			</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/all.js"></script>
+	<script type="text/javascript" src="js/swipeslider.js"></script>
+	<script type="text/javascript" src="js/dropload.js"></script>
+	<script>
+		var myScroll;
+		var product_lis;
+		var page = 1;
+		var pageSize = 10;//每页展示10个
+		var drawData;
+		var hot_data;
+		// var reback_data;
+		var productList = '';
+		var hot_list = '';
+		var reback_list = '';
+		var params = {};
+   		var params1 = {};
+   		var params2 = {};
+   		var param_json;
+		// 页面刷新
+  		function data_show(){
+  			$.ajax({
+  				type: 'post',
+				url: 'https://www.wangdaidayuan.com/api/h5/product/list',
+	 			dataType: 'json',
+	 			async: false,
+				data: {
+					"page": page,
+					"pageSize": pageSize,
+					"type": 2
+				},
+				success: function(data){
+					drawData =data;
+					var banner_html = '';
+					var notice_html = '';
+						// 轮播图部分
+						for(var i =0;i < data.data.bannersList.length;i++){
+							banner_html += '<div class="img">'+'<img src="'+data.data.bannersList[i].picUrl+'"/>'+'</div>'+'<div class="slide-bt"></div>';
+						}
+						$('#slide').html(banner_html);
+						banners();
+						// 公告部分
+						for(var i = 0; i< data.data.noticeList.length;i++){
+							notice_html += '<li>'+data.data.noticeList[i]+'</li>';
+						}
+						$('#news ul').html(notice_html);
+				},
+				error: function(){
+
+				}
+  			});
+  		}
+  		data_show();
+		function autoScroll(obj){
+	      	$(obj).find('ul').animate({
+	         	marginTop: '-.83rem'
+	      	},1000,function(){
+	         	$(this).css({marginTop : "0px"});
+	         	var li  =$(".text_roll ul").children().first().clone()
+	         	$(".text_roll  ul li:last").after(li );
+	         	$(".text_roll  ul li:first").remove();
+
+	      	})
+	    }
+	   	$(function(){
+	     	setInterval('autoScroll("#news")',2500);
+		});
+		$('.order_style_box>div').click(function(e){ 
+			$(this).addClass('active').siblings().removeClass('active');
+			var index=$(this).index();
+			$('.order_style_tab>div').eq(index).show().siblings().hide();
+			// alert(index);
+		});
+		$('.order_style_tab>div').click(function(){
+			var index = $(this).index();
+			// $(this).eq(index).click(function(){
+			// 	pullUpAction();
+			// })
+		});
+		//下拉加载更多
+		 myscroll = new iScroll('wrapper_1',{
+			onScrollMove:function(){
+				if (this.y<(this.maxScrollY)) {
+					$('.pull_icon').addClass('flip');
+					$('.pull_icon').removeClass('loading');
+					if(drawData.data.productInfo.page.hasNext == true){
+						$('.more span').text('释放加载...');
+					}else{
+						$('.more span').text('没有更多加载内容');
+					}
+				}else{
+					$('.pull_icon').removeClass('flip loading');
+					$('.more span').text('上拉加载...');
+				}
+			},
+			onScrollEnd:function(){
+				if ($('.pull_icon').hasClass('flip')) {
+					$('.pull_icon').addClass('loading');
+					$('.more span').text('加载中...');
+					
+					if(drawData.data.productInfo.page.hasNext == true){
+						page++;
+						pullUpAction();
+						$('#scroller>ul').append(productList);
+						console.log('9999999');
+					}
+					
+				}
+			},
+			onRefresh:function(){
+				$('.more').removeClass('flip');
+				$('.more').css('display','block');
+				$('.pull_icon').addClass('loading');
+				$('.more span').text('上拉加载...');
+			}	
+		});
+		if ($('div[id^=scroller]').height()<$('#wrapper_1').height()) {
+			$('.more').hide();
+			myscroll.destroy();
+		}
+		var filter_mark = document.getElementById("filter_mark");
+        function func() {
+            if(filter_mark.style.display == "block"){
+                filter_mark.style.display = "none";
+            }
+            else{
+                filter_mark.style.display = "block";
+                $('.nav_lis').animate({left: '4%',height:'5.4rem',width: '2.37rem'});
+            }
+        }
+        $('.nav_lis li').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+        var alink01 = $("#plat_1").find("span"); 
+		alink01.click(function () { 
+		alink01.each(function () { 
+			$(this).removeClass("templinkactive").addClass("templink"); 
+		}); 
+		$(this).removeClass("templink").addClass("templinkactive"); 
+		}) 
+		var alink02 = $("#plat_2").find("span"); 
+		alink02.click(function () { 
+		alink02.each(function () { 
+			$(this).removeClass("templinkactive").addClass("templink"); 
+		}); 
+		$(this).removeClass("templink").addClass("templinkactive"); 
+		}) 
+		var alink03 = $("#plat_3").find("span"); 
+		alink03.click(function () { 
+		alink03.each(function () { 
+			$(this).removeClass("templinkactive").addClass("templink"); 
+		}); 
+		$(this).removeClass("templink").addClass("templinkactive"); 
+		}) 
+		$('.filter_model').find(':radio').click(function() {
+   			// console.log($(this).val());    
+   			// params =$(this).val();
+   			if($(this).val() == '国资系'){
+   				params ={background:1};
+   			}
+   			if($(this).val() == '上市系'){
+   				params ={background:2};
+   			}
+   			if($(this).val() == '风投系'){
+   				params ={background:3};
+   			}
+   			if($(this).val() == '民营系'){
+   				params ={background:4};
+   			}
+   			if($(this).val() == '10%以下'){
+   				params1 ={endRate: 10};
+   			}
+   			if($(this).val() == '10%-15%'){
+   				params1 ={startRate: 10,endRate: 15};
+   			}
+   			if($(this).val() == '15%-20%'){
+   				params1 ={startRate: 15,endRate: 20};
+   			}
+   			if($(this).val() == '20%以上'){
+   				params1 ={endRate: 20};
+   			}
+   			if($(this).val() == '1个月以下'){
+   				params2 ={endLimit: 1};
+   			}
+   			if($(this).val() == '1-3个月'){
+   				params2 ={startLimit: 1,endLimit: 3};
+   			}
+   			if($(this).val() == '3-6个月'){
+   				params2 ={startLimit:3,endLimit: 20};
+   			}
+   			if($(this).val() == '6-12个月'){
+   				params2 ={startLimit:6,endLimit: 12};
+   			}
+   			if($(this).val() == '12个月以上'){
+   				params2 ={endLimit: 12};
+   			}
+		});
+		$('.through_reg').click(function(){
+			pullUpAction();
+			console.log(JSON.stringify($.extend(params, params1,params2)));
+			$('#filter_mark').hide(300);
+		});
+		$('.sx_filter').click(function(e){
+			e.preventDefault();
+			$('#filter_mark').show();
+
+		})
+		function pullUpAction(){
+			setTimeout(function(){
+				var hasNext = false;
+				$.ajax({
+					type: 'post',
+					url: 'https://www.wangdaidayuan.com/api/h5/product/list',
+					async: false,
+					dataType: 'json',
+					data: {
+						"page": page,
+						"pageSize": 10,
+						"type": 3,
+						"params": JSON.stringify($.extend(params, params1,params2))
+					},
+					success: function(data){
+						drawData = data;
+						console.log(drawData);
+							for(var i =0; i < data.data.productInfo.list.length;i++){
+							//把id存到session中
+		                    var storage = window.localStorage;
+		                    storage['id']= data.data.productInfo.list[i].id;
+		                    console.log(storage['id']);
+		                    console.log(data.data.productInfo.list[i].id);
+							var tag_html='';
+							for(var j=0;j<data.data.productInfo.list[i].tags.length;j++){
+								if(data.data.productInfo.list[i].tags.length<=2){
+									tag_html += `<span class="series_operated">`+data.data.productInfo.list[i].tags[j].tag+`</span>`;
+								}
+								else if(data.data.productInfo.list[i].tags.length>=3){
+									tag_html = `<span class="series_operated">`+data.data.productInfo.list[i].tags[0].tag+`</span>`;
+									tag_html += `<span class="series_operated">`+data.data.productInfo.list[i].tags[1].tag+`</span>`;
+								}
+							}
+							console.log(data.data.productInfo.list[i].targetype);
+							var target_html ='';
+							if(data.data.productInfo.list[i].targetype == 0){
+							  target_html =	`<img src="img/only_firstinvest.png" class="firstinvest">`
+							}else if(data.data.productInfo.list[i].targetype == 1){
+								target_html =	`<img src="img/recast_back.png" class="firstinvest">`
+							}
+								productList += `<li class="lu_com_box">
+								<a href="product_detail.html?id=`+data.data.productInfo.list[i].id+`">
+									<div class="lu_com_hd">
+										<div class="lu_com_img">
+											<img class="lu_com_pic" src="`+data.data.productInfo.list[i].logo+`">
+										</div>
+										<div class="lu_com_only">
+											`+target_html+`
+										</div>
+									</div>
+									<div class="lu_con_bd">
+										<ul class="lu_con_lis">
+											<li class="prefer_repay">
+												<p class="proportion">`+data.data.productInfo.list[i].payBack+`</p>
+												<p class="rebound">参考回报</p>
+											</li>
+											<li class="billion_rebate">
+												<p class="sum">`+data.data.productInfo.list[i].fullReback+`</p>
+												<p>每万元返利</p>
+											</li>
+											<li class="item_invest">
+												<p class="period">`+data.data.productInfo.list[i].limit+`</p>
+												<p>投资期限</p>
+											</li>
+										</ul>
+										<div class="dashed_thread"></div>
+										<div class="series_join_box">
+											<div class="join_series">
+												`+tag_html+`
+											</div>
+											<div class="standard">1000元起 | 已有 <span class="join_num">`+data.data.productInfo.list[i].joinNum+`</span>人参与</div>
+										</div>
+									</div>
+								</a>
+							</li>`;	
+						}
+						
+						$('#scroller>ul').html(productList);
+						myscroll.refresh();
+						
+					},
+					error: function(){
+
+					}
+				})
+				myscroll.refresh();
+			}, 100)
+		}
+		pullUpAction();
+	</script>
+</body>
+</html>

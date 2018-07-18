@@ -1,0 +1,301 @@
+@charset "utf_8";
+.account_content {
+    margin: 0 20px;
+}
+
+/* 左侧 */
+
+.account_left_ul>li {
+    float: left;
+    width: 250px;
+    height: 95px;
+    overflow: hidden;
+    margin: 20px 0 0 0;
+    background-color: #ffffff;
+    border: solid 1px #e4ebf1;
+}
+
+.account_left_ul>li:nth-child(2) {
+    margin: 20px 55px 0 55px;
+}
+
+.pandect_icon01,
+.pandect_icon02,
+.pandect_icon03,
+.pandect_icon04 {
+    width: 70px;
+    height: 95px;
+    float: left;
+    border-right: solid 1px #e4ebf1;
+}
+
+.pandect_icon01 {
+    background: #f9fafb url("../images/personalCenter/pandect_icon01.png") center no-repeat;
+}
+
+.pandect_icon02 {
+    background: #f9fafb url("../images/personalCenter/pandect_icon02.png") center no-repeat;
+}
+
+.pandect_icon03 {
+    background: #f9fafb url("../images/personalCenter/pandect_icon03.png") center no-repeat;
+}
+
+.pandect_icon04 {
+    background: #f9fafb url("../images/personalCenter/pandect_icon04.png") center no-repeat;
+}
+
+.pandect_content {
+    width: 178px;
+    height: 55px;
+    float: right;
+    text-align: left;
+    padding: 25px 0 0 25px;
+}
+
+.pandect_content>p {
+    font-size: 20px;
+    color: #E4C670;
+}
+
+.pandect_content>span {
+    font-size: 16px;
+    color: rgb(50, 50, 50, .8)
+}
+
+/* 返利 */
+
+.rebate_content {
+    width: 860px;
+    height: 340px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border: solid 1px #e4ebf1;
+}
+
+.rebate_title {
+    width: 100%;
+    height: 30px;
+    color: #7f96a3;
+    line-height: 30px;
+    padding-left: 5px;
+    background-color: #f9fafb;
+    border-bottom: solid 1px #e4ebf1;
+}
+
+.rebate_text {
+    width: 120px;
+    height: 31px;
+    margin: 25px auto;
+    border-radius: 32px;
+    color: #E4C670;
+}
+
+.rebate_text>li {
+    float: left;
+    width: 120px;
+    cursor: pointer;
+    height: 30px;
+    color: #E4C670;
+    line-height: 32px;
+    text-align: center;
+}
+
+.rebate_text>li:nth-child(2) {
+    letter-spacing: 1px;
+}
+
+.choose_rebate {
+    border-radius: 32px;
+    color: #fff !important;
+    background:#E4C670;
+}
+
+.rebate_ul01>li,
+.rebate_ul02>li {
+    float: left;
+    width: 196px;
+    height: 60px;
+    margin: 0 0 15px 70px;
+}
+
+.rebate_ul01>li>p,
+.rebate_ul02>li>p {
+    color: #919191;
+    padding-bottom: 5px;
+}
+
+.rebate_ul01>li>input,
+.rebate_ul02>li>input,
+.rebate_ul01>li>select {
+    width: 196px;
+    height: 32px;
+    outline: none;
+    border-radius: 4px;
+    border: solid 1px #b5b5b5;
+}
+
+.code01_li>input,
+.code02_li>input {
+    float: left;
+    width: 102px !important;
+}
+
+.code01_img,
+.code02_img {
+    width: 68px;
+    height: 32px;
+    margin-left: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.code01_img>img,
+.code02_img>img{
+    height: 32px;
+}
+
+.rebate_btn01 {
+    width: 196px;
+    height: 32px;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px auto;
+    line-height: 32px;
+    text-align: center;
+    background:#E4C670;
+    border-radius: 4px;
+}
+
+.error_01,
+.error_02,
+.error_03,
+.error_04,
+.error_05,
+.error_06,
+.error_07,
+.error_08 {
+    color: red;
+    font-size: 12px;
+}
+
+.rebate_affirm,
+.rebate_cancel {
+    width: 196px;
+    height: 32px;
+    outline: none;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.rebate_affirm {
+    color: #fff;
+    border: none;
+    margin: 30px 85px 30px 190px;
+    background:#E4C670;
+}
+
+.rebate_cancel {
+    background: #fff;
+    color: #E4C670;
+    border-radius: 4px;
+    border: 1px solid #E4C670;
+}
+
+.rebate_text02>p {
+    padding-left: 15px;
+}
+
+.rebate_text02>p:nth-child(2),
+.rebate_text02>p:nth-child(3) {
+    padding-left: 33px;
+}
+
+.apply_form {
+    display: none;
+}
+
+/* 弹窗 */
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+.mask,
+.card,
+.approve {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 9999;
+    display: none;
+    position: fixed;
+}
+
+/* 注册失败、成功、重复注册弹窗 */
+.card,
+.approve {
+    top: 25%;
+    width: 347px;
+    height: 323px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 150px;
+    /* position: relative; */
+}
+
+.close {
+    top: 30px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 20px;
+    border-radius: 100%;
+    position: absolute;
+    background: #E4C670;
+}
+
+.approve {
+    background: url("../images/produceDetails/approve.png") center no-repeat;
+}
+
+.card{
+    background: url("../images/produceDetails/card.png") center no-repeat;
+}
+
+.card>p:first-of-type,
+.approve>p:first-of-type {
+    font-size: 22px;
+    color: #323232;
+}
+
+.caed>p:last-of-type, 
+.approve>p:last-of-type {
+    font-size: 16px;
+    color: #E4C670;
+    padding: 0 15px;
+}
+
+.to_card,
+.to_approve {
+    width: 265px;
+    height: 38px;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: block;
+    line-height: 38px;
+    text-align: center;
+    margin: 40px auto 0 auto;
+    background: #E4C670;
+    border-radius: 7px;
+}

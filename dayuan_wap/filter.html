@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>筛选</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="网贷大院投资理财">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
+</head>
+<body>
+	<div class="filter_bg">
+		<div class="filter_bj">
+			<div class="filter_model">
+				<ul class="plat_context_lis" id="plat_1">
+					<li class="context_plat">平台背景</li>
+					<li class="context_1">
+						<span href="#" tag="0">
+							不限
+						</span>
+					</li>
+					<li class="context_2 templink">
+						<span href="#" tag="100101">
+							国资系
+						</span>
+					</li>
+					<li class="context_3 templink">
+						<span href="#" tag="100102">
+							上市系
+						</span>
+					</li>
+					<li class="context_4 templink">
+						<span href="#" tag="100103">
+							风投系
+						</span>
+					</li>
+					<li class="context_5 templink">
+						<span href="#" tag="100104">
+							民营系
+						</span>
+					</li>
+					<li class="context_6 templink">
+						<span href="#" tag="100105">
+							民营系
+						</span>
+					</li>
+					<li class="context_7 templink">
+						<span href="#" tag="100106">
+							民营系
+						</span>
+					</li>
+				</ul>
+				<ul class="plat_annual_lis" id="plat_2">
+					<li class="context_plat">平台年化</li>
+					<li class="annual_1">
+						<span tag='0'>
+							不限
+						</span>
+					</li>
+					<li class="annual annual_2 templink">
+						<span tag="100201">
+							10%以下
+						</span>
+					</li>
+					<li class="annual templink">
+						<span tag="100202">
+							10%-15%
+						</span>
+					</li>
+					<li class="annual annuals annual_up2 templink">
+						<span tag="100203">
+							20%以上
+						</span>
+					</li>
+					<li class="annual annuals annual_3 templink">
+						<span tag="100203">
+							20%以上
+						</span>
+					</li>
+				</ul>
+				<ul class="plat_annual_lis" id="plat_3">
+					<li class="context_plat">投资期限</li>
+					<li class="annual_1">
+						<span tag="100301">
+							不限
+						</span>
+					</li>
+					<li class="annual annual_2 templink">
+						<span tag="100302">
+							1个月以下
+						</span>
+					</li>
+					<li class="annual templink">
+						<span tag="100303">
+							1-3个月
+						</span>
+					</li>
+					<li class="annual annuals annual_up2 templink">
+						<span tag="100304">
+							3-6个月
+						</span>
+					</li>
+					<li class="annual annuals annual_3 templink">
+						<span tag="100305">
+							3-6个月
+						</span>
+					</li>
+					<li>
+						<input type="hidden" id="Brand" value="0" /> 
+						<input type="hidden" id="Price" value="0" /> 
+						<input type="hidden" id="Size" value="0" />
+					</li>
+				</ul>
+			</div>
+			<ul class="apply_nonstop" id="apply_nonstop">
+				<li class="appication_rebate">
+					<a href="">
+						重置
+					</a>
+				</li>
+				<li class="through_reg active">
+					<a href="#">
+						确定
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		var alink01 = $("#plat_1").find("span"); 
+		alink01.click(function () { 
+		alink01.each(function () { 
+			$(this).removeClass("templinkactive").addClass("templink"); 
+		}); 
+		$(this).removeClass("templink").addClass("templinkactive"); 
+		}) 
+		var alink02 = $("#plat_2").find("span"); 
+		alink02.click(function () { 
+		alink02.each(function () { 
+			$(this).removeClass("templinkactive").addClass("templink"); 
+		}); 
+		$(this).removeClass("templink").addClass("templinkactive"); 
+		}) 
+		var alink03 = $("#plat_3").find("span"); 
+		alink03.click(function () { 
+		alink03.each(function () { 
+			$(this).removeClass("templinkactive").addClass("templink"); 
+		}); 
+		$(this).removeClass("templink").addClass("templinkactive"); 
+
+		}) 
+		function filter(){
+			var a = $("#Brand").val(); 
+			var b = $("#Price").val(); 
+			var c = $("#Size").val();
+			
+			// alert(params);
+			$.ajax({
+				type: 'post',
+				url: 'http://47.96.80.242:8080/wddy/api/h5/product/list',
+				dataType: 'json',
+				data: {
+					"page": 1,
+					"pageSize": 10,
+					"type": 3,
+					"params": params
+				},
+				success: function(data){
+					console.log(data);
+				},
+				errror: function() {
+					
+				}
+			});
+		}
+		filter();
+		
+	</script>
+</body>
+</html>

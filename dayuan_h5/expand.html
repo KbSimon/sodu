@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/expand.css">
+    <title>网贷大院</title>
+</head>
+
+<body>
+    <div class="part_01"></div>
+    <div class="part_02">
+        <form action="">
+            <ul class="register_ul">
+                <li>
+                    <input type="text" class="phone_inp" placeholder="请输入手机号" required="required" onkeyup="value=value.replace(/[\W]/g,'') "
+                        onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" maxlength="11">
+                </li>
+                <li>
+                    <input type="text" class="invite_inp" readonly="readonly">
+                </li>
+                <li>
+                    <input type="text" class="img_inp" placeholder="请输入图形验证码" maxlength="4">
+                    <img src="" id="img">
+                </li>
+                <li>
+                    <input type="text" class="code_inp" placeholder="请输入短信验证码">
+                    <input type="button" class="get_code" value="获取验证码">
+                </li>
+                <li>
+                    <input type="password" class="pwd_inp" id="mm" placeholder="请输入密码" minlength="6" maxlength="16">
+                    <div class="see pwd_icon"></div>
+                    <p>*密码由6-16位字母、数字组成</p>
+                </li>
+            </ul>
+        </form>
+        <button class="to_register">立即注册</button>
+        <!-- 下载 -->
+        <div class="download clearfloat">
+            <a href="https://wddy-h5-live.oss-cn-hangzhou.aliyuncs.com/wddy.apk" class="android">Android下载</a>
+            <a href="https://itunes.apple.com/us/app/%E7%BD%91%E8%B4%B7%E5%A4%A7%E9%99%A2/id1400762132?l=zh&ls=1&mt=8" class="ios">iOS下载</a>
+        </div>
+        <!-- 注册协议 -->
+        <div class="deal">
+            <input type="checkbox" id="deal_input" checked>
+            <label for="deal_input"> </label>
+            <a style="color:#666;">我已阅读并同意网贷大院</a>
+            <a class="to_protlcol" style="color:#4293f8;" href="https://wddy-h5.oss-cn-hangzhou.aliyuncs.com/protocol.html">《注册协议》</a>
+        </div>
+    </div>
+    <div class="part_03"></div>
+    <!-- 弹窗 -->
+    <div class="mask"></div>
+    <!-- 错误提示 -->
+    <div class="error">
+        <p class="msg"></p>
+        <a class="close_btn">确定</a>
+    </div>
+</body>
+
+</html>
+<script src="https://unpkg.com/dsbridge/dist/dsbridge.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+    var phoneScale = parseInt(window.screen.width) / 750;
+    document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' +
+        phoneScale + ', target-densitydpi=device-dpi">');
+
+    // 错误弹窗
+    function error() {
+        $(".mask").show();
+        $(".error").show();
+    }
+    
+    
+    // 关闭弹窗
+    $(".close_btn").click(function () {
+        $(".mask").hide();
+        $(".error").hide();
+    })
+
+    // 获取邀请码
+    function getQueryString(name) {
+        var result = window.location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+        if (result == null || result.length < 1) {
+            return "";
+        }
+        return result[1];
+    }
+    $(".invite_inp").val(getQueryString("inviteCode"));
+
+    // 密码效果
+    var number = 0
+    $(".pwd_icon").click(function () {
+        if (number % 2 == 0) {
+            //    $(".pwd_inp").attr("type","text")
+            $(this).removeClass("see").addClass("unsee");
+            document.getElementsByTagName("input")[5].setAttribute("type", "text");
+        } else {
+            $(this).removeClass("unsee").addClass("see");
+            document.getElementsByTagName("input")[5].setAttribute("type", "password");
+        }
+        number++;
+    })
+
+
+    // 发送验证码
+    $(".get_code").click(function () {
+        // 判断手机号是否为空，不为空才能发送验证码
+        if ($(".phone_inp").val() !== "" && /^(13|15|18|14|17)[0-9]{9}$/.test($(".phone_inp").val())) {
+            $.ajax({
+                type: "post",
+                url: "https://japi.wangdaidayuan.com/wddy/api/h5/getCode",
+                dataType: "json",
+                data: {
+                    phone: $(".phone_inp").val(),
+                    picCode: $(".img_inp").val(),
+                    type: "register",
+                },
+                success: function (data) {
+                    if (data.code == 200) {
+                        downTime();
+                        console.log(data);
+                    } else {
+                        error();
+                        $(".msg").text(data.msg);
+                    }
+                },
+
+                error: function (XMLHttpRequest, textStatus, errorThrown) {}
+            });
+        } else {
+            error();
+            $(".msg").text("请输入11位手机号！");
+        }
+    })
+
+    // 重新获取验证码 
+    function downTime() {
+        var at = 60;
+        var MyTime = setInterval(function () {
+            if (at > 0) {
+                at--;
+                $(".get_code").val("重新获取(" + at + ")").attr("disabled", "disabled");
+            } else if (at == 0) {
+                $(".get_code").val("重获验证码").removeAttr("disabled");
+                clearInterval(MyTime);
+            }
+        }, 1000);
+    }
+
+    $("img").hide();
+    // 图形验证码
+    var mobile = $(".phone_inp").val();
+    $("img").click(function () {
+        var mobile = $(".phone_inp").val();
+    //    alert(mobile);
+        document.getElementById("img").src = "https://japi.wangdaidayuan.com/wddy/api/h5/auth/piccode/?" + Math.random()+"&phone="+mobile;
+    })
+
+
+    // 手机号是否注册验证
+    $(".phone_inp").blur(function () {
+        $("img").show();
+        var mobile = $(".phone_inp").val();
+        document.getElementById("img").src = "https://japi.wangdaidayuan.com/wddy/api/h5/auth/piccode/?phone=" +mobile;
+        $.ajax({
+            type: "post",
+            url: "https://japi.wangdaidayuan.com/wddy/api/h5/isregister",
+            dataType: "json",
+            data: {
+                phone: $(".phone_inp").val(),
+            },
+            success: function (data) {
+                if ($(".phone_inp").val() !== "") {
+                    // 判断是否注册，若注册不允许发验证码
+                    if (data.data == true) {
+                        error();
+                        $(".msg").text("手机号已注册"); // 显示重复注册
+                        $(".get_code").attr("disabled", "disabled"); // 禁止发送验证码
+                    } else {
+                        $(".get_code").removeAttr("disabled", "disabled");
+                    }
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                //    alert(errorThrown)
+            }
+        })
+    });
+
+    // 注册提交
+    $(".to_register").click(function () {
+
+        // 判断用户名是否为空
+        if ($(".phone_inp").val() === "") {
+            error();
+            $(".msg").text("请输入手机号！");
+            return false;
+        }
+        // 判断手机格式
+        else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($(".phone_inp").val()) && $(".phone_inp").val().length < 11) {
+            error();
+            $(".msg").text("手机号码格式不正确！");
+            return false;
+        }
+        // 判断验证码是否为空
+        else if ($(".code_inp").val() === "") {
+            $(".error_02").text("验证码不能为空！");
+            return false;
+        }
+        // 判断图形验证码是否为空
+        else if ($(".img_inp").val() === "") {
+            error();
+            $(".msg").text("图片验证码不能为空！");
+            return false;
+        }
+        // 判断密码是否为空或者小于6位
+        else if ($(".pwd_inp").val() === "" || $(".pwd_inp").val().length < 6) {
+            error();
+            $(".msg").text("请输入至少6位密码");
+            return false;
+        }
+        // 未同意注册协议
+        else if ($("input[type='checkbox']").prop("checked") === false) {
+            error();
+            $(".msg").text("请先阅读并同意用户协议！");
+            return false;
+        }
+        $.ajax({
+            type: "post",
+            url: "https://japi.wangdaidayuan.com/wddy/api/h5/register",
+            dataType: "json",
+            data: {
+                phone: $(".phone_inp").val(),
+                password: $(".pwd_inp").val(),
+                code: $(".code_inp").val(),
+                invitationCode: $(".invite_inp").val(),
+            },
+            success: function (data) {
+                if (data.code === 200) {
+                    console.log(data)
+                    error();
+                    $(".msg").text("注册成功")
+                } else {
+                    error();
+                    $(".msg").text(data.msg); // 处理错误信息
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {}
+        });
+    });
+</script>

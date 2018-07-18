@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+.rebate_ul{
+    width: 870px;
+    padding: 0 15px;
+}
+
+.rebate_ul>li{
+    height: 40px;
+    font-size: 14px;
+    overflow: hidden;
+    line-height: 40px;
+}
+
+.rebate_ul>li:not(:last-of-type){
+    border-bottom: 1px dashed rgba(123, 149, 164, 0.41);
+}
+
+.rebate_ul>li:not(:first-of-type){
+    color: rgba(74, 107, 127, 0.73)
+}
+
+.rebate_ul>li>div{
+    float: left;
+    width: 93px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rebate_ul>li:nth-of-type(1){
+    color: #4a6b7f;
+}
+
+#laypages_01{
+    text-align: center;
+    margin: 30px 0;
+}

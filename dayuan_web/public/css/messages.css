@@ -1,0 +1,239 @@
+@charset "utf-8";
+.messages {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.messages_top {
+    margin: 10px 0;
+}
+
+.banner {
+    width: 790px;
+    height: 380px;
+    float: left;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* 今日头条 */
+.today {
+    float: right;
+    width: 380px;
+    height: 380px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.today_bottom{
+    padding: 10px;
+}
+
+
+.today_title {
+    width: 315px;
+    float: right;
+    font-size: 18px;
+    color: #323232;
+}
+
+
+.state_text,
+.todayNew02_text{
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    color: rgba(50, 50, 50, 0.6);
+}
+
+.todayNew02_title {
+    font-size: 18px;
+    color: #323232;
+    cursor: pointer;
+    margin: 10px 0 5px 0;
+}
+
+.todayNew02_text {
+    max-height: 104px;
+    line-height: 21px;
+    text-align: justify;
+    -webkit-line-clamp: 5;
+}
+
+/* 最新动态 */
+.new_state {
+    width: 790px;
+    float: left;
+    margin: 0 0 15px 0;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.new_state_top{
+    width: 790px;
+    height: 46px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 46px;
+    border-bottom: 2px solid #e4c760;
+}
+
+.new_state_bottom{
+    padding: 10px 10px 0 10px;
+}
+
+.new_state_bottom>section:not(:last-of-type){
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid rgba(181, 181, 181, 0.3);
+}
+
+.new_state_bottom>section:last-of-type{
+    margin: 0 0 20px 0;
+}
+
+section{
+    padding: 0px 0 15px 0;
+}
+
+.state_right{
+    width: 540px;
+    float: right;
+}
+
+.state_left{
+    float: left;
+    width: 202px;
+    height: 148px;
+    margin-right: 20px;
+    /* background: url("../images/messages/viewpoint.png") center no-repeat; */
+}
+
+.state_left>img{
+    width: 202px;
+    height: 148px;
+}
+
+/* 热门排行 */
+.hot_rank{
+    width: 380px;
+    float: right;
+    height: 342px;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 5px 0px 
+		rgba(0, 0, 0, 0.3);
+}
+
+.hot_rank_top{
+    width: 380px;
+    height: 46px;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 46px;
+    border-bottom: 2px solid #e4c760;
+}
+
+.hot_ul{
+    padding: 15px 20px 0 10px; 
+}
+
+.hot_ul>li{
+    float: left;
+    overflow: hidden;
+    margin: 10px 0 0 0;
+}
+
+.hot_icon{
+    width: 24px;
+    height: 24px;
+    float: left;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+    line-height: 24px;
+    background: url("../images/messages/new_icon.png") center no-repeat;
+}
+
+.hot_ul>li>a{
+    float: left;
+    width: 350px;
+    cursor: pointer;
+    font-size: 15px;
+    overflow: hidden;
+    line-height: 24px;    
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.state_title{
+    font-size: 18px;
+    color: #323232;
+}
+
+.state_content>li{
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.state_div{
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.state_div>div{
+    float: left;
+    padding: 0 5px;  
+    font-size: 11px;
+    border-radius: 2px;
+    padding: 0 5px;
+    margin-right: 10px;
+    color: rgba(136, 136, 136, 0.75);
+    border: solid 1px rgba(181, 181, 181, 0.75);
+}
+
+.state_text{
+    width: 540px;
+    -webkit-line-clamp: 3;
+    line-height: 1.5;
+}
+
+.state_number{
+    margin: 20px 0 10px 0;
+}
+
+.state_number_left{
+    float: left;
+    line-height: 20px;
+}
+
+.date,
+.source{
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(50, 50, 50, 0.6);
+}
+
+.source{
+   float: left; 
+}
+
+.review_icon,
+.praise_icon{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -5px;
+    display: inline-block;
+}
+
+.date{
+    float: right;
+    padding-left: 5px;
+}
+
+
+#laypages_01{
+    margin: 10px auto;
+    text-align: center;
+}

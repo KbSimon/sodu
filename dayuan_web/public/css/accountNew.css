@@ -1,0 +1,561 @@
+@charset "utf-8";
+.account {
+    width: 1200px;
+    margin: 20px auto 50px auto;
+}
+
+/* 左侧 */
+.account_left {
+    float: left;
+    width: 207px;
+    height: 454px;
+    background: #fff;
+}
+
+/* 左侧顶部 */
+.person_top {
+    width: 207px;
+    height: 184px;
+    position: relative;
+    text-align: center;
+    padding: 40px 0 0 0;
+    box-shadow: 0px 1px 5px 0px rgba(214, 183, 97, 0.35);
+}
+
+.grade{
+    top: 15px;
+    width: 50px;
+    height: 27px;
+    position: absolute;
+    background: url("../images/personalCenter/grade.png") center no-repeat;
+}
+
+.user>img{
+    padding-bottom: 10px;
+}
+
+/* 左侧底部 */
+.person_nav{
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.person_nav>li{
+    height: 60px;
+    font-size: 16px;
+    line-height: 60px;
+}
+
+.active{
+   background: #f9f4e7;
+   border-left: 3px solid #d6b761;
+}
+
+.active1{
+    color: #c7a45f;
+}
+
+.active>a{
+    color: #c7a45f;
+}
+
+/* 右侧 */
+.account_right{
+    float: right;
+    width: 978px;
+}
+
+.grade_bar{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* 账户栏 */
+.account_bar{
+    width: 978px;
+    height: 296px;
+    background: #fff;
+    padding: 30px 0 30px 30px;
+}
+
+.vip{
+    width: 50px;
+    height: 80px;
+    float: left;
+}
+
+.invite_text{
+    width: 870px;
+    font-size: 14px;
+    color: #999;
+    float: left;
+}
+
+.grade_text>span{
+    color: #e23438;
+}
+
+.grade_up{
+    margin-top: 10px;
+    color: #c7a45f;
+    display: block;
+}
+
+.invite_left{
+    float: left;
+}
+
+.invite_right{
+    float: right;
+}
+
+/* 余额 */
+.balance_bar{
+    padding-top: 30px;
+}
+
+.balance_left{
+    width: 267px;
+    float: left;
+    border-right: 1px solid #ccc;
+}
+
+.balance_title{
+    color: #666;
+    font-size: 16px;
+}
+
+.balance_money1{
+    font-size: 40px;
+    color: #c7a45f;
+}
+
+.balance_money2{
+    font-size: 40px;
+    color: #333;
+}
+
+.balance_money1>span,
+.balance_money2>span{
+    font-size: 16px;
+}
+
+.balance_right{
+    float: right;
+    width: 600px;
+}
+
+.balance_right>li{
+    float: left;
+    width: 200px;
+}
+
+/* 提现 */
+.withdraw{
+    width: 94px;
+    height: 37px;
+    outline: none;
+    font-size: 18px;
+    color: #c7a45f;
+    border-radius: 5px;
+    background: #fff;
+	border: solid 1px #c7a45f;
+}
+
+.input_card{
+    line-height: 40px;
+    overflow: hidden;
+}
+
+.input_card>div,
+.input_card>label{
+    float: left;
+}
+
+.input_card>div{
+    color: #999;
+    padding: 0 0 0 20px;
+}
+
+/* 收益明细 */
+.account_data{
+    margin: 15px 0 0 0;
+    background: #fff;
+    padding: 30px 60px 30px 35px;
+}
+
+.detais_title{
+    float: left;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.detais_text{
+    float: left;
+    color: #999;
+    font-size: 14px;
+    padding: 5px 0 0 30px;
+}
+
+.withdraw_title{
+    float: left; 
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 0 0 30px;
+}
+
+.ins_table,
+.rebate_table,
+.details_table,
+.withdraw_table{
+    width: 885px;
+    font-size: 16px;
+    margin: 30px auto 0 auto;
+    border-collapse: collapse;
+}
+
+.ins_table{
+    width: 1020px;
+}
+
+.withdraw_table{
+    display: none;
+}
+
+.ins_table td,
+.rebate_table td,
+.details_table td,
+.withdraw_table td{
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+}
+
+.ins_table tr:nth-child(2n),
+.rebate_table tr:nth-child(2n),
+.details_table tr:nth-child(2n),
+.withdraw_table tr:nth-child(2n){
+    background-color: #fcfcfc;
+}
+
+.rebate_table td:first-of-type{
+    width: 165px;
+}
+
+.rebate_table td:not(:first-of-type){
+    width: 144px;
+}
+
+.ins_table td,
+.details_table td{
+    width: 177px;
+}
+
+.withdraw_table td{
+    width: 221.25px;
+}
+
+.ins_table tr:first-child>td,
+.rebate_table tr:first-child>td,
+.details_table tr:first-child>td,
+.withdraw_table tr:first-child>td {
+    color: #666;
+    border-top: none;
+}
+
+.rebate_table tr:last-child>td,
+.details_table tr:last-child>td,
+.withdraw_table tr:last-child>td{
+    border-bottom: none;
+}
+
+.ins_table tr>td:first-child,
+.rebate_table tr>td:first-child,
+.details_table tr>td:first-child,
+.withdraw_table tr>td:first-child{
+    color: #999;
+    border-left: none;
+}
+
+.ins_table  tr>td:last-child,
+.rebate_table tr>td:last-child,
+.details_table tr>td:last-child,
+.withdraw_table tr>td:last-child{
+    border-right: none;
+}
+
+.to_details{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.money1{
+    color: #e23438;
+}
+
+.money2{
+    color: #4293f8;
+}
+
+/* 弹窗 */
+.mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+.mask,
+.window,
+.bound_card,
+.update_card,
+.details_window,
+.password_window{
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    display: none;
+    position: fixed;
+}
+
+.window,
+.update_card,
+.details_window,
+.password_window{
+    top: 25%;
+    width: 1100px;
+    z-index: 999;
+    margin: 0 auto;
+    padding: 0 50px;
+    font-size: 16px;
+    background: #fff;
+}
+
+.window{
+    height: 420px;
+}
+
+.details_window{
+    height: 300px;
+    padding: 80px 40px 0 40px;
+}
+
+.close {
+    top: 30px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    background: url("../images/common/close.png") center no-repeat;
+}
+
+.window_top{
+    height: 125px;
+    padding: 50px 0 0 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.window_money{
+    color: #999;
+    padding-top: 15px;
+}
+
+.window_content{
+    padding: 25px 0 40px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+input{
+    margin: 0 10px;
+    outline: none;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    border: 1px solid #ddd;
+}
+
+.input_money{
+    padding-bottom: 20px;
+}
+
+
+#withdraw_btn,
+.withdraw_btn{
+    width: 338px;
+    height: 65px;
+    outline: none;
+    border: none;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    line-height: 65px;
+    margin: 30px auto 0 auto;
+    background: url("../images/personalCenter/btn2.png") center no-repeat;
+}
+
+/* 账号设置 */
+.set_right{
+    float: right;
+    width: 980px;
+    height: 605px;
+    font-size: 16px;
+    background: #fff;
+    padding: 30px 30px 0 30px;
+}
+
+.set_table{
+    width: 920px;
+    border-collapse: collapse;
+}
+
+.set_table tr{
+    border-bottom: 1px solid #f2f2f2;
+}
+.set_table td{
+    height: 75px;
+    line-height: 75px;
+}
+
+.set_table tr td:nth-child(2n){
+    color: #999;
+}
+
+.set_table td:last-of-type{
+    color: #c7a45f;
+}
+
+.hint{
+    font-size: 14px;
+    color: #ddd;
+    padding-top: 20px;
+}
+
+.to_bound,
+.to_update,
+.update_card,
+.update_password{
+    cursor: pointer;
+}
+
+/* 绑定银行卡弹窗 */
+.bound_card,
+.update_card,
+.password_window{
+    top: 25%;
+    width: 620px;
+    z-index: 999;
+    font-size: 16px;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+    background: #fff;
+}
+
+.bound_card,
+.update_card{
+    height: 550px;
+}
+
+.card_title,
+.update_title,
+.password_title{
+    padding: 40px 0 45px 0;
+}
+
+.card_ul>li,
+.update_ul>li,
+.password_ul>li{
+    width: 425px;
+    height: 40px;
+}
+
+.card_ul>li,
+.update_ul>li{
+    margin: 0 0 30px 65px;
+}
+
+.password_ul>li{
+    margin: 0 0 30px 20px;
+}
+
+.card_ul>li>label,
+.update_ul>li>label,
+.password_ul>li>label{
+    width: 100px;
+    float: left;
+    text-align: right;
+    line-height: 40px;
+}
+
+.card_ul>li>select,
+.update_ul>li>select{
+    height: 40px;
+    outline: none;
+    margin: 0 10px;
+    border-radius: 4px;
+    background: #f2f2f2;
+    border: 1px solid #ddd;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+
+.card_ul>li>input,
+.card_ul>li>select,
+.update_ul>li>input,
+.update_ul>li>select,
+.password_ul>li>input{
+    float: left;
+    width: 305px;
+    padding: 0 0 0 10px;
+}
+
+.error_01,
+.error_02,
+.error_03,
+.error_04,
+.error_05,
+.error_06,
+.error_07,
+.error_08,
+.error_09,
+.error_10,
+.error_11,
+.error_12,
+.error_13{
+    float: left;
+    color: #e23438;
+    font-size: 14px;
+    padding: 5px 0 0 110px;
+}
+
+.city_input,
+.state_input{
+    width: 142.5px !important;
+}
+
+
+.card_btn,
+.update_btn,
+.password_btn{
+    width: 305px;
+    height: 45px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 4px;
+    margin: 10px 0 0 40px;
+    border: 1px solid #d6b761;
+    background: url("../images/personalCenter/btn2.png") center no-repeat;
+}
+
+/* 修改密码弹窗 */
+.password_window{
+    height: 415px;
+}

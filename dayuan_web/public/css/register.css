@@ -1,0 +1,362 @@
+@charset "utf-8";
+
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background:#E4C670;
+}
+
+
+.register {
+    height: 618px;
+    max-width: 1920px;
+    min-width: 1200px;
+    margin:  0 auto;
+    position: relative;
+    background: url("../images/login/background.png") center no-repeat;
+}
+
+.states{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.register_left {
+    float: left;
+    width: 412px;
+    height: 397px;
+    background: url("../images/login/bg.png") center no-repeat;
+}
+
+.register_right {
+    float: right;
+    width: 430px;
+    height: 530px;
+    border-radius: 4px;
+    margin: 50px 50px 0 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+#forget{
+    height: 450px;
+    margin: 100px 50px 0 0;
+}
+
+.register_right_top {
+    width: 300px;
+    height: 40px;
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    margin: 20px auto 20px auto;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.register_right_top>p{
+    float: left;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid #D6B761;
+}
+
+.register_right_top>section,
+.register_right_top>section>a{
+    float: right;
+    color: #999;
+    font-size: 12px;
+    line-height: 40px;
+}
+
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.register_title {
+    font-size: 18px;
+    text-align: center;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.code,
+.phone,
+.img_code,
+.password,
+.pwdAgain{
+    width: 300px;
+    height: 38px;
+    position: relative;
+    margin: 0px 0 15px 0;
+}
+
+
+.pwd_icon,
+.code_icon,
+.phone_icon,
+.pwdAgain_icon {
+    width: 28px;
+    height: 28px;
+    margin: 5px;
+    position: absolute;
+}
+
+.phone_icon {
+    background: url("../images/login/phone.png") center no-repeat;
+}
+
+.code_icon{
+    background: url("../images/login/code.png") center no-repeat;
+}
+
+.pwd_icon {
+    background: url("../images/login/password.png") center no-repeat;
+}
+
+.pwdAgain_icon{
+    background: url("../images/login/password_agin.png") center no-repeat;
+}
+
+.img_inp,
+.code_inp{
+    width: 180px;
+    height: 40px;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 7px;
+    border: solid 1px #ebe6e6;
+}
+
+.pwd_inp,
+.phone_inp,
+.invite_code,
+.pwdAgain_inp {
+    width: 300px;
+    height: 35px;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 7px;
+    border: solid 1px #ebe6e6;
+}
+
+.img_code>a{
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.img_code>a>img{
+    width: 110px;
+    height: 40px;
+}
+
+.login_state {
+    font-size: 12px;
+    margin: 10px 0 15px 0;
+    line-height: 20px;
+    color: rgba(50, 50, 50, 0.5);
+}
+
+.get_code{
+    width: 110px;
+    height: 37px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.rember {
+    float: left;
+}
+
+.rember a{
+    color: #E4C670;
+    
+}
+
+.forget_btn,
+.register_btn {
+    width: 265px;
+    height: 38px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 7px;
+    background: url("../images/login/btn.png") center no-repeat;
+}
+
+.forget_btn{
+    margin: 30px auto 0 auto;
+}
+
+.to_register{
+    font-size: 13px;
+    margin-top: 35px;
+    text-align: center;
+    color: rgba(50, 50, 50, 0.5);
+}
+
+.to_register>a{
+    color: #E4C670;
+}
+
+.error_01,
+.error_02,
+.error_03,
+.error_04,
+.error_05{
+    color: red;
+    font-size: 12px;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+.mask,
+.approve,
+.protocol {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 9999;
+    display: none; 
+    position: fixed;
+}
+
+/* 注册协议 */
+.protocol  {
+    top: 15%;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 4px;
+    background: #fff;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+.deal>input+label {
+    top: 5px;
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    padding: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    position: relative;
+    background: #D6B761;
+}
+
+.deal>input:checked+label::after {
+    top: 3px;
+    left: 0;
+    width: 100%;
+    line-height: 15px;
+    font-size: 15px;
+    color: #fff;
+    content: "\2713";
+    position: absolute;
+    text-align: center;
+    vertical-align: text-top;
+}
+
+.close {
+    top: 15px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    background: url("../images/common/close.png") center no-repeat;
+}
+
+.protocol_title{
+    text-align: center;
+    height: 50px;
+    font-size: 24px;
+    color: #E4C670;
+    line-height: 50px;
+    background: #eee;
+}
+
+.protocol_content{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.deal_title{
+    color: #333;
+    font-size: 18px;
+}
+
+.deal_title,
+.deal_text{
+    text-indent: 24px;
+}
+
+.deal_title{
+    margin: 10px auto;
+}
+
+.deal_text{
+    line-height: 25px;
+    text-align: justify;
+}
+
+.protocol_content{
+    height: 84%;
+    padding: 0 20px;
+    overflow: auto;
+}
+
+/* 注册失败、成功、重复注册弹窗 */
+.approve {
+    top: 25%;
+    width: 347px;
+    height: 323px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 150px;
+}
+
+
+.approve {
+    background: url("../images/produceDetails/approve.png") center no-repeat;
+}
+
+
+.card>p:first-of-type,
+.approve>p:first-of-type {
+    font-size: 22px;
+    color: #323232;
+}
+
+.caed>p:last-of-type, 
+.approve>p:last-of-type {
+    font-size: 22px;
+    color: #E4C670;
+}
+
+.to_index,
+.to_login {
+    float: left;
+    width: 90px;
+    height: 38px;
+    border: none;
+    outline: none;
+    color: #fff;
+    display: block;
+    line-height: 38px;
+    text-align: center;
+    margin: 40px 40px;
+    background: #E4C670;
+    border-radius: 7px;
+}

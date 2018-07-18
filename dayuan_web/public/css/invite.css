@@ -1,0 +1,310 @@
+@charset "utf-8";
+/* banner */
+
+.banner {
+    margin: 0 auto;
+    height: 500px;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/personalCenter/invite_01.png") center no-repeat;
+}
+
+.banner_content {
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 左侧背景 */
+
+.banner_bg {
+    top: 50px;
+    left: -55px;
+    width: 409px;
+    height: 415px;
+    z-index: 3;
+    position: absolute;
+    background: url("../images/personalCenter/invite_03.png") center no-repeat
+}
+
+/* 邀请框 */
+
+.frame {
+    top: 220px;
+    left: 275px;
+    width: 718px;
+    height: 127px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.grade {
+    top: 15px;
+    width: 50px;
+    height: 27px;
+    color: #fff;
+    line-height: 27px;
+    position: absolute;
+    padding: 0 0 0 8px;
+    background: url("../images/personalCenter/grade.png") center no-repeat;
+}
+
+.frame_top {
+    padding: 20px 0 0 60px;
+}
+
+.vip {
+    width: 26px;
+    height: 20px;
+    float: left;
+    background: url("../images/personalCenter//invite_02.png") center no-repeat;
+}
+
+.invite_title {
+    float: left;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0 0 0 10px;
+}
+
+.invite_title>span {
+    color: #e23438;
+}
+
+.up {
+    font-size: 14px;
+    color: #c7a45f;
+    padding: 0 0 0 40px;
+}
+
+.up:hover {
+    color: #c7a45f;
+}
+
+/* 邀请链接 */
+
+.address {
+    line-height: 40px;
+    margin: 20px 0 0 80px;
+}
+
+.address>label {
+    float: left;
+    font-size: 16px;
+    color: #999;
+}
+
+.address>input {
+    float: left;
+    width: 340px;
+    height: 40px;
+    outline: none;
+    padding: 0 0 0 10px;
+    border-radius: 10px;
+    background: #f2f2f2;
+    margin: 0px 30px 0 10px;
+    border: 1px solid #f2f2f2;
+}
+
+.address>button {
+    width: 134px;
+    height: 38px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #e8ca71;
+    background: url("../images/personalCenter/btn2.png") center no-repeat;
+}
+
+/* 等级制度 */
+
+.part_01 {
+    height: 620px;
+    max-width: 1920px;
+    min-width: 1200px;
+    padding: 50px 0 0 0;
+    background: #f7f7fa;
+}
+
+.unroca {
+    width: 1200px;
+    height: 90px;
+    margin: 0 auto;
+    background: url("../images/personalCenter/friend_01.png") center no-repeat;
+}
+
+.friends{
+    width: 1200px;  
+    margin: 0 auto;
+}
+
+.first_table {
+    width: 575px;
+    height: 240px;
+    float: left;
+    margin: 20px 0 30px 0;
+}
+
+.first_table:first-of-type{
+    margin-right: 50px;
+}
+
+.first_table td {
+    width: 95px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid #EEE;
+}
+
+.first_table td div {
+    width: 40px;
+    height: 20px;
+    color: #fff;
+    margin: 0 auto;
+    background: rgba(35, 35, 37, 1);
+    border-radius: 4px;
+}
+
+.first_table tr:nth-child(2n) td:not(:first-child){
+    background: #fcfcfc;
+}
+
+.first_table tr:not(:first-child) td:not(:first-child){
+    color: #b59753;
+}
+
+.grade_text{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.grade_text>p{
+    width: 575px;
+    text-align: justify;
+    float: left;
+}
+
+.grade_text>p:nth-child(2){
+    margin-left: 50px;
+}
+
+.part_02 {
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: #fff;
+    padding: 60px 0 30px 0;
+}
+
+/* 人脉变钱脉 */
+.invite_rules {
+    width: 1200px;
+    height: 403px;
+    margin: 0 auto;
+}
+
+.rules_title{
+    width: 1200px;
+    height: 43px;
+    background: url("../images/personalCenter/friend_02.png") center no-repeat;
+}
+
+.rules_left{
+    width: 440px;
+    height: 335px;
+    float: left;
+    margin: 30px 0 0 0;
+    background: url("../images/personalCenter/friend_03.png") center no-repeat;
+}
+
+.rules_right{
+    width: 760px;
+    height: 335px;
+    float: right;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 40px;
+    padding: 0 0 0 5px;
+    margin: 110px 0 0 0;
+}
+/* 邀请记录 */
+
+.invite_data {
+    width: 1200px;
+    height: 376px;
+    position: relative;
+    margin: 60px auto 0 auto;
+    background: url("../images/personalCenter/invite_08.png") center no-repeat;
+}
+
+.invite_people {
+    top: 50px;
+    left: 130px;
+    width: 300px;
+    position: absolute;
+}
+
+.invite_people>li {
+    float: left;
+    height: 80px;
+    overflow: hidden;
+    line-height: 15px;
+    padding-top: 30px;
+}
+
+.people_icon {
+    float: left;
+    width: 23px;
+    height: 23px;
+    background: url("../images/personalCenter/invite_07.png") center no-repeat;
+}
+
+.money_icon {
+    float: left;
+    width: 23px;
+    height: 23px;
+    background: url("../images/personalCenter/invite_06.png") center no-repeat;
+}
+
+.invite_p {
+    float: left;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 0 0 10px;
+}
+
+.invite_p>span {
+    font-size: 30px;
+}
+
+.invite_table {
+    left: 475px;
+    width: 545px;
+    position: absolute;
+    margin: 10px 0 0 0;
+}
+
+.invite_table tr {
+    height: 49px;
+    text-align: center;
+}
+
+.invite_table tr:nth-child(1) {
+    font-size: 22px;
+    color: #fff;
+}
+
+.invite_table tr:nth-child(2) {
+    font-size: 16px;
+}
+
+.laypages_01 {
+    text-align: center;
+}

@@ -1,0 +1,153 @@
+@charset "utf-8";
+.login {
+    height: 618px;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/login/background.png") center no-repeat;
+}
+
+
+.states{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.login_right {
+    float: right;
+    width: 410px;
+    height: 360px;
+    border-radius: 4px;
+    margin: 120px 50px 0 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.login_right_top {
+    width: 300px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    margin: 30px auto 0 auto;
+    border-bottom: 2px solid #D6B761;
+}
+
+
+.login_right_top>img {
+    margin-top: -30px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.login_title {
+    font-size: 18px;
+    text-align: center;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.user,
+.password {
+    width: 300px;
+    height: 38px;
+    position: relative;
+}
+
+.user {
+    margin: 30px 0 20px 0;
+}
+
+
+.pwd_inp,
+.user_inp {
+    width: 300px;
+    height: 38px;
+    outline: none;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: solid 1px #ebe6e6;
+}
+
+.login_state {
+    font-size: 12px;
+    margin: 15px 0 10px 0;
+    line-height: 20px;
+    color: #666;
+}
+
+.rember {
+    float: left;
+}
+
+.forget {
+    float: right;
+    cursor: pointer;
+}
+
+button {
+    width: 265px;
+    height: 38px;
+    outline: none;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 7px;
+    background: url("../images/login/btn.png") center no-repeat;
+}
+
+.to_register{
+    font-size: 13px;
+    margin-top: 20px;
+    text-align: center;
+    color: rgba(50, 50, 50, 0.5);
+}
+
+.to_register>a{
+    color: #E4C670;
+}
+
+/* 验证码 */
+.code{
+    width: 265px;
+    height: 38px;
+    position: relative;
+    margin: 0px 0 20px 0;
+}
+
+.code_icon {
+    width: 28px;
+    height: 28px;
+    margin: 5px;
+    position: absolute;
+}
+
+.code_inp{
+    width: 156px;
+    height: 38px;
+    outline: none;
+    padding-left: 40px;
+    border-radius: 7px;
+    border: solid 1px #ebe6e6;
+}
+
+.get_code{
+    width: 99px;
+    height: 37px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.code_icon{
+    background: url("../images/login/code.png") center no-repeat;
+}
+
+.error_01,
+.error_02{
+    color: red;
+    font-size: 12px;
+}

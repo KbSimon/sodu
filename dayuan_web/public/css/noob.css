@@ -1,0 +1,239 @@
+@charset "utf-8";
+/* 新手指引 */
+
+/* banner */
+
+.banner {
+    height: 700px;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/newbice/banner_new.png") center no-repeat;
+}
+
+.banner_content {
+    width: 1060px;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 36px;
+    text-indent: 2em;
+    text-align: justify;
+    padding: 220px 0 0 0;
+}
+
+.part_01 {
+    height: 460px;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: #f7f7fa;
+}
+
+/* 带来什么 */
+
+.bring {
+    width: 1200px;
+    height: 460px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 0 50px 0;
+}
+
+.bring>p {
+    color: #171717;
+    font-size: 24px;
+}
+
+.bring_bottom {
+    width: 365px;
+    height: 3px;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+    background: url("../images/newbice/bring_bottom.png") center no-repeat;
+}
+
+.bring_ul>li {
+    width: 240px;
+    float: left;
+    color: #171717;
+    padding: 55px 0 0 0;
+}
+
+.bring_ul>li>img {
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.bring_ul>li>p {
+    font-size: 18px;
+    padding: 20px 0 0 0;
+}
+
+.bring_ul>li>span {
+    font-size: 12px;
+}
+
+.what_ul {
+    padding: 75px 0 0 0;
+}
+
+.what_ul>li {
+    width: 165px;
+    height: 25px;
+    font-size: 16px;
+    color: #171717;
+    border-radius: 12px;
+    margin: 0 0 20px 0;
+    line-height: 25px;
+    background-color: #ececee;
+}
+
+/* 操作拿返利 */
+
+.part_02 {
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+}
+
+.how {
+    height: 223px;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/newbice/part_02.png") center no-repeat;
+}
+
+.how_ul {
+    width: 1035px;
+    height: 275px;
+    margin: 0 auto;
+}
+
+.how_ul>li {
+    float: left;
+    width: 115px;
+    text-align: center;
+    padding: 75px 0 0 0;
+}
+
+.how_ul>li>p {
+    font-size: 18px;
+    color: #000000;
+    padding: 20px 0 0 0;
+}
+
+.how_ul>li:nth-child(2n) {
+    margin-top: 85px;
+    background: url("../images/newbice/solid.png") center no-repeat;
+}
+
+.carousel {
+    width: 1200px;
+    height: 628px;
+    margin: 0 auto;
+    padding: 35.5px 0;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-container {
+    width: 1135px;
+    height: 565px;
+    margin: 0 auto;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 16px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide:nth-child(1) {
+    background: url("../images/newbice/01.png") center no-repeat;
+}
+
+.swiper-slide:nth-child(2) {
+    background: url("../images/newbice/02.png") center no-repeat;
+}
+
+.swiper-slide:nth-child(3) {
+    background: url("../images/newbice/03.png") center no-repeat;
+}
+
+.swiper-slide:nth-child(4) {
+    background: url("../images/newbice/04.png") center no-repeat;
+}
+
+.swiper-slide:nth-child(5) {
+    background: url("../images/newbice/05.png") center no-repeat;
+}
+
+.swiper-slide>div{
+    color: #fff;
+    /* width: 1135px; */
+    position: absolute;
+    text-align: left;
+}
+
+.swiper-slide>div:first-child{
+    left: 150px;
+}
+
+.swiper-slide>div:first-child>span{
+    font-size: 36px;
+    margin: 0 10px 0 0;
+}
+
+.swiper-slide>div:last-child{
+    left: 150px;
+    bottom: 200px;
+}
+
+.part_03{
+    height: 222px;
+    margin: 55px auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/newbice/join.png") center no-repeat;
+}
+
+.join{
+    color: #fff;
+    font-size: 16px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 100px 0 0 95px;
+}
+
+.join>p{
+    line-height: 30px;
+}
+
+.joinUs{
+    top: 100px;
+    right: 110px;
+    width: 223px;
+    height: 46px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    border-radius: 4px;
+    position: absolute;
+	border: solid 1px #ffffff;
+}

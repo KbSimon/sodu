@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+main{
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 30px 15px;
+   
+}
+
+section{
+    height: 100%;
+    text-indent: 34px;
+    text-align: justify;
+}
+
+.statement{
+    font-size: 18px;
+}
+
+.title{
+    font-size: 20px;
+    margin: 20px auto;
+}
+
+.text{
+    font-size: 16px;
+}

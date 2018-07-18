@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+     <title>登录</title>
+     <link rel="stylesheet" href="css/reset.css">
+     <link rel="stylesheet" href="css/public.css">
+     <script src="js/jquery-1.11.3.js"></script>
+     <script src="js/mobile.js"></script>
+</head>
+<body class="bg" id="login_wrap">
+     <div class="login_bg">
+          <div class="reg_hd">欢迎加入网贷大院</div>
+          <div class="phone_box edge">
+               <input type="text" class="phone" id="phone" name="phone" placeholder="请输入手机号" onkeydown="enter(event)">
+          </div>
+          <div class="pwd_box edge" id="pwd_box">
+               <input type="password" class="pwd" id="pwd" placeholder="请输入登录密码" onkeydown="enter(event)">
+          </div>
+          <div class="graph_box validate login_code">
+               <a href="login_code.html" class="use_code" id="use_code">使用验证码登录</a>
+               <a href="forgot_pwd.html" class="forget_pwd">忘记密码</a>
+          </div>
+          <div class="register_btn" id="login">
+               <input type="button" class="free_reg" id="dologin" value="登录">
+          </div>
+          <div class="login_ed">
+               <a href="register.html">还没有网贷大院账号？立即注册</a>
+          </div>
+     </div>
+     <!--错误提示-->
+     <div class="alertDark J_alertTip" style="display: none;"></div>
+     <script>
+          function enter(e){ //传入 event 
+               var e = e || window.event; 
+               if(e.keyCode == 13){ 
+                   
+               } 
+          }
+          // 错误提示
+          function alertDark(e){
+             $('.J_alertTip').show();
+             $('.J_alertTip').html(e);
+             setTimeout("$('.J_alertTip').hide(300)",1000);
+          }
+          // 表单验证
+          function check(){
+               // 判断用户名是否为空
+               if ($("#phone").val() === "") {
+                    alertDark('手机号不能为空!');
+                    return false;
+               }
+                // 判断手机格式
+               else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($("#phone").val()) || $("#phone").val().length < 11) {
+                    alertDark("手机号码格式不正确！");
+                    return false;
+               }
+                // 判断密码是否为空
+               else if ($("#pwd").val() === "" || $("#pwd").val().length < 6) {
+                    alertDark("请输入至少6位数密码！");
+                    return false;
+               }
+               return true;
+          }
+          $('#dologin').click(function(){
+               if(!check()){
+                    return false;
+               }
+               $.ajax({
+                    type: "post",
+                    url: "https://japi.wangdaidayuan.com/wddy/api/h5/login",
+                    dataType: "json",
+                    data: {"phone": $('.phone').val(),"password": $('.pwd').val(),"type": 1},
+                    success: function (data) {
+                      console.log(data);
+                      //把userId存到session中
+                      var storage = window.localStorage;
+                      storage['userId']=data.data.userId;
+                      storage['phone'] = data.data.phone;
+                       if(data.code ==200){
+                          window.location.href = 'index.html';
+                       }else{
+                         alertDark(data.msg);
+                       }
+
+                    },
+                    error: function (){
+                         
+                    }
+              });
+          });
+     </script>
+</body>
+</html>

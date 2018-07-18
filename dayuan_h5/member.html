@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/member.css">
+    <script src="https://unpkg.com/dsbridge/dist/dsbridge.js"></script>
+    <title>会员说明</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="title"></div>
+        <div class="bg"></div>
+    </div>
+    <div class="blank1"></div>
+    <div class="content">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="first"></td>
+                    <td colspan="3">首次奖励</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>会员等级</td>
+                    <td>在投金额</td>
+                    <td>累计邀请</td>
+                    <td>邀请人奖励</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>贫农</td>
+                    <td>&lt;10000元</td>
+                    <td>1个有效用户</td>
+                    <td>10元</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>富农</td>
+                    <td>≥10000元</td>
+                    <td>2个有效用户</td>
+                    <td>5%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>地主</td>
+                    <td>≥50000元</td>
+                    <td>5个有效用户</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>财主</td>
+                    <td>≥100000元</td>
+                    <td>10个有效用户</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>富翁</td>
+                    <td>≥200000元</td>
+                    <td>20个有效用户</td>
+                    <td>20%</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="blank2"></div>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="second"></td>
+                    <td colspan="3">持续奖励</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>会员等级</td>
+                    <td>在投金额</td>
+                    <td>累计邀请</td>
+                    <td>邀请人奖励</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>贫农</td>
+                    <td>&lt;10000元</td>
+                    <td>1个有效用户</td>
+                    <td>1%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>富农</td>
+                    <td>≥10000元</td>
+                    <td>2个有效用户</td>
+                    <td>2%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>地主</td>
+                    <td>≥50000元</td>
+                    <td>5个有效用户</td>
+                    <td>3%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>财主</td>
+                    <td>≥100000元</td>
+                    <td>10个有效用户</td>
+                    <td>5%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>富翁</td>
+                    <td>≥200000元</td>
+                    <td>20个有效用户</td>
+                    <td>8%</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="blank2"></div>
+        <table class="rules_table">
+            <tbody>
+                <tr>
+                    <td class="rules"></td>
+                    <td colspan="3">规则说明</td>
+                </tr>
+                <tr>
+                    <td colspan="5" style="height:20px"></td>
+                </tr>
+                <tr>
+                    <td colspan="5">1、以上两项要求，满足其中之一，自动升级。</td>
+                </tr>
+                <tr>
+                    <td colspan="5">2、有效用户定义：受邀好友有投资记录，方为有效用户；</td>
+                </tr>
+
+                <tr>
+                    <td colspan="5">3、在投金额：大院仅从投资日和标的期限推算在投期限，不受平台何时满标起息影响。例如：您于6月1日通过大院前往甲平台进行注册并完成投资（金额A），又于6月2日通过大院前往乙平台进行注册并完成投资（金额B），假设两次标的期限均为30天，那么6月1日和7月1日的在投金额分别为A和B，6月2日至6月30日期间的在投金额为A+B。</td>
+                </tr>
+                <tr>
+                    <td colspan="5">4、邀请人奖励规则：贫农固定奖励10元，其他根据受邀好友的投资返利及您的会员等级所对应的奖励比例发放奖励。</td>
+                </tr>
+                <td colspan="5" style="height:40px"></td>
+            </tbody>
+        </table>
+    </div>
+    <div class="bottom clearfloat">
+        <div class="up" onclick="dynamicJumpToViewController()">快速升级</div>
+        <div class="invite" onclick="showSharePlatformView()">邀请好友</div>
+    </div>
+</body>
+
+</html>
+<script>
+    var phoneScale = parseInt(window.screen.width) / 750;
+    document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' +
+        phoneScale + ', target-densitydpi=device-dpi">');
+
+    // 分享
+    function showSharePlatformView() {
+        dsBridge.call("showSharePlatformView", "success")
+    }
+
+    // 产品列表
+    function dynamicJumpToViewController(){
+        var u = navigator.userAgent; 
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端 
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isiOS){
+            dsBridge.call("dynamicJumpToViewController", {className:"ProductViewController",isLogin:false,selectedTabIndex:1},function(v){});
+        }
+        if(isAndroid){
+            dsBridge.call("jumpMainActivity","success");
+        }     
+    }
+</script>

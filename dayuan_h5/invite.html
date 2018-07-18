@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">   
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/invite.css">
+    <script src="https://unpkg.com/dsbridge/dist/dsbridge.js"></script>
+    <title>邀请有礼</title>
+</head>
+
+<body>
+    <div class="banner"></div>
+    <div class="part_01">
+        <div class="rules_title"></div>
+        <div class="rules">
+            <p>1、受邀好友必须是通过您的专属链接或邀请码注册的网贷大院用户。</p>
+            <p>2、受邀好友在完成平台投资并获得返利时，大院将根据受邀好友的投资返利及您的会员等级所对应的奖励比例为您发放现金奖励，您可在网贷大院官网（www.wangdaidayuan.com)“个人中心”查看并提现。</p>
+            <p>3、邀请好友越多，好友投资返利越高，您的邀请奖励也会越高。</p>
+            <p>4、活动最终解释权归杭州大院数据科技有限公司所有</p>
+        </div>
+    </div>
+    <div class="part_02">
+        <div class="list"></div>
+        <div class="content">
+            <table>
+                <tr>
+                    <td>奖励排名</td>
+                    <td>用户名</td>
+                    <td>奖励金额</td>
+                </tr>
+                <tr>
+                    <td class="myBank"></td>
+                    <td class="phone0"></td>
+                    <td class="total0"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="first">1</div>
+                    </td>
+                    <td class="phone1">158****0754</td>
+                    <td class="total1">1200.00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="second">2</div>
+                    </td>
+                    <td class="phone2">151****1514</td>
+                    <td class="total2">1000.00</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="third">3</div>
+                    </td>
+                    <td class="phone3">181****3854</td>
+                    <td class="total3">850.00</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="phone4">183****0918</td>
+                    <td class="total4">600.00</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="phone5">151****0644</td>
+                    <td class="total5">500.00</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="phone6">177****0758</td>
+                    <td class="total6">350.00</td>
+                </tr>
+                <tr>
+                    <td>……</td>
+                    <td>……</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="part_03">
+        <div class="btn" onclick="showSharePlatformView()">立即邀请</div>
+    </div>
+</body>
+
+</html>
+<script src="js/DSBridge.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+    var userInfo = dsBridge.call("getUserInfo", "userInfo");
+    var id = userInfo.userId; 
+    // 分享
+    function showSharePlatformView() {
+        var userInfo = dsBridge.call("getUserInfo", "userInfo");
+        if (userInfo !== "null") {
+            dsBridge.call("showSharePlatformView", "success")
+        } else {
+            dsBridge.call("presentLoginViewController", "success", function (v) {})
+        }
+    }
+
+    $(function () {
+        $.ajax({
+            type: "post",
+            url: "https://japi.wangdaidayuan.com/wddy/api/h5/invite/profitRanking?userId="+id,
+            dataType: "json",
+            data: { 
+            },
+            success: function (data) {
+                if (data.code == 200) {
+                    console.log(data)
+                    var userInfo = dsBridge.call("getUserInfo", "userInfo");
+                    $(".phone1").text(data.listRankInfo[0].phone);
+                    $(".total1").text(data.listRankInfo[0].total);
+                    $(".phone2").text(data.listRankInfo[1].phone);
+                    $(".total2").text(data.listRankInfo[1].total);
+                    $(".phone3").text(data.listRankInfo[2].phone);
+                    $(".total3").text(data.listRankInfo[2].total);
+                    $(".phone4").text(data.listRankInfo[3].phone);
+                    $(".total4").text(data.listRankInfo[3].total);
+                    $(".phone5").text(data.listRankInfo[4].phone);
+                    $(".total5").text(data.listRankInfo[4].total);
+                    $(".phone6").text(data.listRankInfo[5].phone);
+                    $(".total6").text(data.listRankInfo[5].total); 
+                    if(userInfo !== "null"){
+                        $(".myBank").text(data.myRankInfo.myRank);
+                        $(".phone0").text(data.myRankInfo.myName);
+                        $(".total0").text(data.myRankInfo.myMoney);
+                    }else{
+                        $(".myBank").text("");
+                        $(".phone0").text("");
+                        $(".total0").text("");  
+                    }
+                } 
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+            }
+        });
+    })
+
+    
+</script>
+<script>
+    var phoneScale = parseInt(window.screen.width) / 750;
+    document.write('<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' +
+        phoneScale + ', target-densitydpi=device-dpi">');
+</script>

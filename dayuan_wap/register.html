@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/public.css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/mobile.js"></script>
+</head>
+<body class="bg" id="register_wrap">
+        <div class="reg_bg">
+            <div class="reg_hd">欢迎加入网贷大院</div>
+            <div class="phone_box edge">
+                <input type="text" class="phone" id="phone" placeholder="请输入手机号">
+            </div>
+            <div class="pwd_box edge">
+                <input type="password" class="pwd" id="pwd" placeholder="请输入登录密码">
+            </div>
+            <div class="pwd_box edge">
+                <input type="password" class="pwd_1" id="pwd_1" placeholder="请确认登录密码">
+            </div>
+            <div class="graph_box validate">
+                <input type="text" class="graph_identify" id="graph_identify" placeholder="请输入图形验证码">
+                <img class="animate_validate"  id="img" alt="">
+            </div>
+            <div class="graph_box validate">
+                <input type="text" class="graph_identify" id="graph_identify_1" placeholder="请输入短信验证码">
+                <input type="button" class="send_btn" id="send_btn" value="发送验证码" onclick="sendCode()">
+            </div>
+            <div class="pwd_box edge">
+                <input type="text" class="invite_code" id="invite_code" placeholder="请输入邀请人号码（*可不填）">
+            </div>
+           <div class="protocol_agree">
+               <input type="checkbox" class="radio" id="check_sel">
+               <label for="check_sel" class="flexiable">
+                   <div class="check_box"></div>
+               </label>
+               <span class="read">我已阅读并同意网贷大院</span>
+               <a href="http://wddy-h5-live.oss-cn-hangzhou.aliyuncs.com/protocol.html" class="register_protocol">《注册协议》</a>
+           </div>
+            <div class="register_btn" id="register">
+                <input type="button" class="free_reg" id="free_reg" value="免费注册">
+            </div>
+            <div class="reg_ed">
+                <a href="login.html">已有账号？请先登录</a>
+            </div>
+        </div>
+        <!--错误提示-->
+        <div class="alertDark J_alertTip" style="display: none;"></div>
+        <script>    
+            // 错误提示
+            function alertDark(e){
+                $('.J_alertTip').show();
+                $('.J_alertTip').html(e);
+                setTimeout("$('.J_alertTip').hide(300)",1000);
+            }
+            $("#img").hide();
+            //只有输入了手机号之后才能调用图形验证码的接口
+            var tel = $('#phone').val();
+            $('.animate_validate').click(function(){
+                var tel = $('#phone').val();
+                document.getElementById("img").src = 'https://japi.wangdaidayuan.com/wddy/api/h5/auth/piccode/?' + Math.random()+"&phone="+ tel;
+            })
+            // 手机号是否注册验证
+            $("#phone").blur(function () {
+                $("img").show();
+                var tel = $("#phone").val();
+                document.getElementById("img").src = "https://japi.wangdaidayuan.com/wddy/api/h5/auth/piccode/?phone=" +tel;
+                $.ajax({
+                    type: "post",
+                    url: "https://japi.wangdaidayuan.com/wddy/api/h5/isregister",
+                    dataType: "json",
+                    data: {
+                        phone: $("#phone").val(),
+                    },
+                    success: function (data) {
+                      console.log(data);
+                        if ($("#phone").val() !== "") {
+                            // 判断是否注册，若注册不允许发验证码
+                            if (data.data == true) {
+                                alertDark("手机号已注册"); // 显示重复注册
+                                $("#send_btn").attr("disabled", "disabled"); // 禁止发送验证码
+                            } else {
+                                $("#send_btn").removeAttr("disabled", "disabled");
+                            }
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        //    alert(errorThrown)
+                    }
+                })
+            });
+             //获取短信验证码
+          // 判断是否输入了手机号、图形验证码
+          function judge_tel_piccode(){
+              if ($("#phone").val() === "") {
+                    alertDark('手机号不能为空!');
+                    return false;
+               }
+                // 判断手机格式
+               else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($("#phone").val()) || $("#phone").val().length < 11) {
+                    alertDark("手机号码格式不正确！");
+                    return false;
+               }
+               // 判断图形验证码是否为空
+               else if ($("#graph_identify").val() === "") {
+                    alertDark("图片验证码不能为空！");
+                    return false;
+               }//判断图形验证码的位数是否为6位
+               else  if($('#graph_identify').val().length !=4){
+                    alertDark("请输入4位数的图形验证码！");
+               }
+               return true;
+          } 
+          var InterValObj; //timer变量，控制时间  
+          var count = 60; //间隔函数，1秒执行 ,(有效时间:1分钟)
+          var curCount;//当前剩余秒数  
+          var code = ""; //产生验证码  
+          var codeLength = 6;//验证码长度  
+          //输入手机号和图形验证码之后才能调用短信验证码接口
+          //发送手机短信验证码
+          function sendCode(){
+               if(!judge_tel_piccode()){
+                    return false;
+               }
+               curCount = count; 
+               // 产生验证码  
+              for ( var i = 0; i < codeLength; i++) {  
+                  code += parseInt(Math.random() * 9).toString();  
+              }  
+                // 设置button效果，开始计时
+              $("#send_btn").attr("disabled", "true");  
+              $("#send_btn").val("重新发送(" + curCount + ")");  
+              InterValObj = window.setInterval(SetRemainTime, 1000); // 启动计时器，1秒执行一次  
+              //发送验证码到手机
+             $.ajax({
+               type: "post",
+               url:"https://japi.wangdaidayuan.com/wddy/api/h5/getCode",
+               dataType: "json",
+               data: {
+                    "phone": $("#phone").val(),
+                    "picCode": $('#graph_identify').val(),
+                    "type": "register"
+               },
+               success: function(data){
+                    console.log(data);
+               },
+               error: function(){
+                    alertDark(data.msg);
+               }
+             });
+               
+          }
+          //timer处理函数  
+          function SetRemainTime() {
+              if (curCount == 0) {
+               //验证码失效,重新发送
+                  window.clearInterval(InterValObj);// 停止计时器  
+                  $("#send_btn").removeAttr("disabled");// 启用按钮  
+                  $("#dologin").removeAttr("disabled");//确定按钮  
+                  $("#send_btn").val("获取验证码");
+                  code = ""; // 清除验证码。如果不清除，过时间后，输入收到的验证码依然有效  
+              }else {
+                  curCount--;  
+                  $("#send_btn").val("重新发送(" + curCount + ")");  
+              }  
+          }  
+            //验证
+            function check(){
+                // 判断手机号是否为空
+                if ($("#phone").val() === "") {
+                    alertDark("请输入手机号！");
+                    return false;
+                }
+                // 判断手机号格式
+                else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($("#phone").val()) && $("#phone").val().length < 11) {
+                    alertDark("手机号码格式不正确！");
+                    return false;
+                }// 判断密码是否为空或者小于6位
+                else if ($("#pwd").val() === "" || $("#pwd").val().length < 6) {
+                   alertDark("请输入至少6位密码");
+                    return false;
+                }// 判断是否确认密码
+                else if ($("#pwd_1").val() === "") {
+                    alertDark("请确认新密码！");
+                    return false;
+                }
+                // 判断两次密码是否一致
+                else if ($("#pwd").val() !== $("#pwd_1").val() || $("#pwd_1").val().length < 6) {
+                    alertDark("两次密码不一致！");
+                    return false;
+                }
+                // 判断图形验证码是否为空
+                else if ($("#graph_identify").val() === "") {
+                    alertDark("图片验证码不能为空！");
+                    return false;
+                }//判断图形验证码的位数是否为6位
+                else  if($('#graph_identify').val().length !=4){
+                     alertDark("请输入4位数的图形验证码！");
+                }
+                // 判断验证码是否为空
+                else if ($("#graph_identify_1").val() === "") {
+                    alertDark("验证码不能为空！");
+                    return false;
+                }//判断验证码是否为6位
+                else if($("#graph_identify_1").val().length !=4){
+                    alertDark('验证码错误');
+                }
+                 // 未同意注册协议
+                 else if ($("input[type='checkbox']").prop("checked") === false) {
+                    alertDark("请先阅读并同意用户协议！");
+                    return false;
+                }
+                return true;
+            }
+            $('#free_reg').click(function(){
+                if(!check()){
+                    return false;
+                }
+                var invite= $('#invite_code').val();
+                if($('#invite_code').val() ==''){
+                    invite = 0;
+                }
+                $.ajax({
+                    type: 'post',
+                    url: 'https://japi.wangdaidayuan.com/wddy/api/h5/register',
+                    dataType: 'json',
+                    data:{
+                        "phone": $('#phone').val(),
+                        "password": $('#pwd').val(),
+                        "code": $('#graph_identify_1').val(),
+                        "invitationCode": invite
+                    },
+                    success: function (data) {
+                        if (data.code === 200) {
+                            window.location.href='login.html';
+                            alertDark("注册成功");
+                        } else {
+                            alertDark(data.msg); // 处理错误信息
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                    }
+                });
+            });
+        </script>
+</body>
+</html>

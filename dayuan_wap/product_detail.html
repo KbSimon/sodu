@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>产品详情</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="网贷大院投资理财">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
+</head>
+<body class="pr">
+	<div class="F2F2F2_bg pr">
+		<div class="FFF2CD_hd">
+			<div class="first_cast_about">
+				<div class="first_invest white tac">仅限首投</div>
+				<p class="invest_rate white tac">12.6%-12.2%</p>
+				<p class="refer_repay white tac">参考回报</p>
+			</div>
+		</div>
+		<div class="selective_product pa">
+			<div class="rebate_ulbox" id="rebate_ulbox">
+				<div class="rebate_thread"></div>
+			</div>
+			<div class="plat_detail pr">
+				<a href="#">
+					<span>平台详情</span>
+					<b class="detail_arrow lf pa"></b>
+				</a>
+			</div>
+			<ul class="plat_nature">
+			</ul>
+			<!-- <i class="product_strategy pa"></i> -->
+		</div>
+	</div>
+	<div class="back_rate_act pr">
+		<a href="#">
+			<b class="vertical_ff0"></b>
+			<span class="repay_act">返利活动</span>
+			<span class="see_more pa">查看更多></span>
+		</a>
+	</div>
+	<ul class="act_detail">
+		<li>
+			<p class="invest_sum">投资金额</p>
+			<span>（元）</span>
+		</li>
+		<li>
+			<p class="invest_sum">投资期限</p>
+			<span>（天）</span>
+		</li>
+		<li>
+			<p class="invest_sum">大院返利</p>
+			<span>（元）</span>
+		</li>
+		<li>
+			<p class="invest_sum">参考总回报</p>
+			<span>（元）</span>
+		</li>
+		<li>
+			<p class="invest_sum">参考综合年化</p>
+			<span>（%）</span>
+		</li>
+	</ul>
+	<ul class="actData_detail">
+		
+	</ul>
+	<div class="remark">备注：受平台实时年化影响，参考综合年化仅供参考。</div>
+	<div class="product_tactic">
+		<div class="tactic_inner">
+			<div class="back_rate_act pr">
+				<a href="#">
+					<b class="vertical_ff0"></b>
+					<span class="repay_act">产品攻略</span>
+				</a>
+			</div>
+			<div class="tactic_detail">
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<div class="attention_event">
+		<div class="attention_in">
+			<div class="back_rate_act pr">
+				<a href="#">
+					<b class="vertical_ff0"></b>
+					<span class="repay_act">注意事项</span>
+				</a>
+			</div>
+			<div class="event_desc">
+				<p></p>
+			</div>
+		</div>
+	</div>
+	<div class="rebate_flow">
+		<div class="rebate_flowin">
+			<div class="back_rate_act pr">
+				<a href="#">
+					<b class="vertical_ff0"></b>
+					<span class="repay_act">返利流程</span>
+				</a>
+			</div>
+			<ul class="flow_lis">
+				<li class="step_1">
+					<img class="reg_wd" src="img/reg_wd.png">
+					<p class="reg_yard">1.注册网贷大院</p>
+				</li>
+				<li class="step_2">
+					<img class="lf_arrow" src="img/lf_arrow.png">
+				</li>
+				<li class="step_3">
+					<img class="reg_wd" src="img/to_reg.png">
+					<p class="reg_yard">2.点击“直达注册”</p>
+				</li>
+				<li class="step_4">
+					<img class="reg_wd" src="img/complete_invest.png">
+					<p class="reg_yard">3.完成投资</p>
+				</li>
+				<li class="step_5">
+					<img class="lf_arrow" src="img/lf_arrow.png">
+				</li>
+				<li class="step_6">
+					<img class="reg_wd" src="img/apply_rebate.png">
+					<p class="reg_yard">4.申请返利</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<ul class="apply_nonstop" id="apply_nonstop">
+		<!-- <li class="appication_rebate">
+			<a href="#">
+				申请返利
+			</a>
+		</li> -->
+		<li class="through_reg active">
+			<a href="#">
+				直达注册
+			</a>
+		</li>
+	</ul>
+	<button type="button" class="nonstop" id="nonstop" >直达注册</button>
+	<div class="mask_bg" style="display: none;">
+		<div class="throughing_bg pr">
+			<img class="go_to pa" src="img/go_to.png">
+			<p class="going tac">正在前往</p>
+			<div class="spinner">
+			 	<div class="bounce1"></div>
+			 	<div class="bounce2"></div>
+			 	<div class="bounce3"></div>
+			</div>
+			<div class="skip_reg">
+				*请务必确保<span>在跳转页面上进行注册</span>，否则是不会产生返利的哦~
+			</div>
+		</div>
+	</div>
+	<div id="filter_mark">
+		<div class="act_detail_wrap">
+			<ul class="act_detail">
+				<li>
+					<p class="invest_sum">投资金额</p>
+					<span>（元）</span>
+				</li>
+				<li>
+					<p class="invest_sum">投资期限</p>
+					<span>（天）</span>
+				</li>
+				<li>
+					<p class="invest_sum">大院返利</p>
+					<span>（元）</span>
+				</li>
+				<li>
+					<p class="invest_sum">参考总回报</p>
+					<span>（元）</span>
+				</li>
+				<li>
+					<p class="invest_sum">参考综合年化</p>
+					<span>（%）</span>
+				</li>
+			</ul>
+			<ul class="actData_detail">
+				
+			</ul>
+			<div class="remark">备注：受平台实时年化影响，参考综合年化仅供参考。</div>
+		</div>
+	</div>
+	<script>
+		var userId = localStorage.getItem("userId");
+		var urls = window.location.search;
+		if (urls.indexOf("?") != -1) { 
+			var str = urls.substr(1); //type=22&page=1
+			strs = str.split("&");//用 & 来分割
+			a = strs[0].split("="); 
+			// console.log(a);
+			// console.log(parseInt(a[1]));
+		}
+		function detail(){
+			var goods_reback;
+			var pt_detail;
+			var userId = localStorage.getItem("userId");
+			$.ajax({
+				type: 'post',
+				url: 'https://www.wangdaidayuan.com/api/h5/product/detail',
+				dataType: 'json',
+				data: {
+					"userId": userId,
+					"id": a[1]
+				},
+				success: function(data){
+					console.log(data);
+					var storage = window.localStorage;
+                    storage['platId']=data.data.productInfo.platId;
+                     storage['platName']=data.data.productInfo.platName;
+					$('.invest_rate').html(data.data.productInfo.productMinRate+'%-'+data.data.productInfo.productMaxRate+'%');
+					if(data.data.isApi == 0){
+						$('#nonstop').css('display','block');
+						$("apply_nonstop").css('display','none');
+					}else if(data.data.isApi ==1){
+						$('#nonstop').css('display','none');
+						$("apply_nonstop").css('display','block');
+					}
+					goods_reback =`<ul class="rebate_info">
+						<li>
+							<p class="repay_money">`+data.data.productInfo.fullReback+`元</p>
+							<span class="repay_standard">每万元返利</span>
+						</li>
+						<li>
+							<p class="repay_money">`+data.data.productInfo.minDueTime+`-`+data.data.productInfo.maxDueTime+`天</p>
+							<span class="repay_standard">投资期限</span>
+						</li>
+						<li>
+							<p class="repay_money">`+data.data.productInfo.minLendMoney+`元</p>
+							<span class="repay_standard">最低投资金额</span>
+						</li>
+					</ul>`;
+					$('#rebate_ulbox').html(goods_reback);
+					var rate_html='';
+					for(var i = 0; i<data.data.rateInfos.length;i++){
+						if(data.data.rateInfos.length <=9){
+							rate_html += `<li class="FCFCFC">
+							<div>`+data.data.rateInfos[i].amount+`</div>
+							<div class="data_C7A45F">30</div>
+							<div>`+data.data.rateInfos[i].timeLimit+`</div>
+							<div class="data_E23438">`+data.data.rateInfos[i].reward+`</div>
+							<div>`+data.data.rateInfos[i].rate+`</div>
+						</li>`;
+						}
+					}
+					$('.actData_detail').html(rate_html);
+
+					// 产品攻略
+					$(".tactic_detail p").html(data.data.remarkList[0].value)
+					// 注意事项
+					$(".event_desc p").html(data.data.remarkList[1].value)
+					// 注册直达链接
+					$(".through_reg a").attr('href',data.data.productInfo.thirdUrl)
+				
+					var palt_info ='';
+					// console.log(data.data.productInfo.productTags[0]);
+					for(var i = 0; i < data.data.productInfo.productTags.length;i++){
+						palt_info =`<li class="series_1">`+data.data.productInfo.productTags[i].tag+`</li>`;
+					}
+					$('.plat_nature').html(palt_info);
+				},
+				error: function(){
+					
+				}
+			});
+		}
+		detail();
+		$('.back_rate_act').click(function(){
+			$('#filter_mark').css('display','block');
+			var goods_reback;
+			var pt_detail;
+			$.ajax({
+				type: 'post',
+				url: 'https://www.wangdaidayuan.com/api/h5/product/detail',
+				dataType: 'json',
+				data: {
+					"userId": userId,
+					"id": a[1]
+				},
+				success: function(data){
+					console.log(data);
+					$('.invest_rate').html(data.data.productInfo.productMinRate+'%-'+data.data.productInfo.productMaxRate+'%');
+					if(data.data.isApi == 0){
+						$('#nonstop').css('display','block');
+						$("apply_nonstop").css('display','none');
+					}else if(data.data.isApi ==1){
+						$('#nonstop').css('display','none');
+						$("apply_nonstop").css('display','block');
+					}
+					goods_reback =`<ul class="rebate_info">
+						<li>
+							<p class="repay_money">`+data.data.productInfo.fullReback+`元</p>
+							<span class="repay_standard">每万元返利</span>
+						</li>
+						<li>
+							<p class="repay_money">`+data.data.productInfo.minDueTime+`-`+data.data.productInfo.maxDueTime+`天</p>
+							<span class="repay_standard">投资期限</span>
+						</li>
+						<li>
+							<p class="repay_money">`+data.data.productInfo.minLendMoney+`元</p>
+							<span class="repay_standard">最低投资金额</span>
+						</li>
+					</ul>`;
+					$('#rebate_ulbox').html(goods_reback);
+					var rate_html='';
+					for(var i = 0; i<data.data.rateInfos.length;i++){
+							rate_html += `<li class="FCFCFC">
+							<div>`+data.data.rateInfos[i].amount+`</div>
+							<div class="data_C7A45F">30</div>
+							<div>`+data.data.rateInfos[i].timeLimit+`</div>
+							<div class="data_E23438">`+data.data.rateInfos[i].reward+`</div>
+							<div>`+data.data.rateInfos[i].rate+`</div>
+						</li>`;
+						}
+					$('.actData_detail').html(rate_html);
+				},
+				error: function(){
+					
+				}
+			});
+		})
+		function tie_bank(){
+			$.ajax({
+				type: 'post',
+				url: 'https://www.wangdaidayuan.com/api/h5/act/mine/user/info',
+				dataType: 'json',
+				data: {
+					"userId": userId
+				},
+				success: function(data){
+					console.log(data);
+					if(data.data.bank == null){
+						$('.appication_rebate a').click(function(){
+							window.location.href = 'tie_bank.html';
+						})
+					}else{
+						$('.appication_rebate a').click(function(){
+							window.location.href = 'ask_rebate.html?id='+a[1];
+						})
+					}
+				},
+				error: function(){
+
+				}
+			});
+		}
+		tie_bank();
+	</script>
+</body>
+</html>

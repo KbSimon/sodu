@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* banner */
+
+.banner {
+    height: 418px;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/aboutUs/banner.png") center no-repeat;
+}
+
+.aboutUs_content {
+    width: 1200px;
+    padding: 5px 0;
+    margin: 10px auto 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.aboutUs_title{
+    font-size: 22px;
+    padding: 20px 0 0 20px;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.aboutUs_title>img{
+    float: left;
+    margin-right: 10px;
+}
+
+.aboutUs_title>p{
+    float: left;
+    line-height: 25px;
+}
+
+
+.aboutUs_text{
+    padding: 15px 45px 0 50px
+}
+
+.aboutUs_text>p{
+    font-size: 14px;
+    line-height: 25px;
+    text-indent: 2em;
+    text-align: justify;
+    color: rgba(50,50,50,0.8);
+}
+
+.aboutUs_ul{
+    height: 118px;
+    margin: 45px 0;
+    background: url("../images/aboutUs/bg.png") center no-repeat;
+}
+
+/* 新版关于我们 */
+
+.part_01{
+    height: 741px;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/aboutUs/part_01.png") center no-repeat;
+}

@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* banner */
+
+.banner {
+    height: 418px;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 1200px;
+    background: url("../images/newbice/banner.png") center no-repeat;
+}
+
+.explain01,
+.explain02 {
+    width: 1200px;
+    margin: 10px auto 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.explain01>p {
+    font-size: 14px;
+    line-height: 25px;
+    text-align: justify;
+    padding: 10px 50px 20px 55px;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.newbice_title {
+    font-size: 22px;
+    padding: 20px 0 0 20px;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.newbice_title>img {
+    float: left;
+    margin-right: 10px;
+}
+
+.newbice_title>p {
+    float: left;
+    line-height: 25px;
+}
+
+/* 如何操作 */
+
+.step_top_bg {
+    width: 1114px;
+    height: 13px;
+    margin: 20px auto 10px auto;
+    background: url("../images/newbice/step_bg.png") center no-repeat;
+}
+
+.step_top_ul {
+    padding: 0 0 0 40px;
+}
+
+.step_top_ul>li {
+    width: 290px;
+    float: left;
+    overflow: hidden;
+}
+
+.step_top_ul>li:nth-child(2) {
+    padding-left: 20px;
+}
+
+.step_top_ul>li:nth-child(3) {
+    padding-left: 45px;
+}
+
+.step_top_ul>li:nth-child(4) {
+    padding-left: 55px;
+}
+
+.step_top_ul>li>div {
+    float: left;
+}
+
+.step_top_ul>li>div:nth-child(2) {
+    font-size: 14px;
+    margin-left: 10px;
+    color: rgba(50, 50, 50, 0.8);
+}
+
+.step_top_ul>li>div:nth-child(2)>p>span {
+    color: #E4C670;
+}
+
+/* 中间 */
+
+.step_middle {
+    padding: 90px 40px 70px 30px;
+}
+
+.step_middle>li {
+    overflow: hidden;
+}
+
+.step_middle>li:not(:last-child) {
+    padding-bottom: 55px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.step_middle>li:not(:first-of-type) {
+    padding-top: 65px;
+}
+
+.step_left {
+    float: left;
+}
+
+.step_left,
+.step_right {
+    width: 565px;
+}
+
+.step_right {
+    float: left;
+}
+
+.step_icon {
+    padding-right: 40px;
+}
+
+.step_icon,
+.step_content {
+    float: left;
+}
+
+.step_content>p:nth-child(1) {
+    font-size: 44px;
+    color: #939aa6;
+}
+
+.step_content>p:nth-child(2) {
+    font-size: 14px;
+    color: #2c2d2f;
+    font-weight: bold;
+}
+
+.step_content>p:nth-child(3) {
+    font-size: 14px;
+    color: #939aa6;
+    margin: 5px 0 15px 0;
+}
+
+.step_content>p:nth-child(4) {
+    font-size: 14px;
+    color: #939aa6;
+}
+
+.step_content>p:nth-child(4)>span {
+    color: #E4C670;
+}
+
+/* 建议 */
+
+.advice_top {
+    text-align: center;
+}
+
+.advice_top>p:nth-child(1) {
+    color: #939aa6;
+}
+
+.advice_top>p:nth-child(2) {
+    font-size: 36px;
+    color: #222222;
+}
+
+.advice_top>p:nth-child(3) {
+    color: #222222;
+    font-size: 13px;
+}
+
+.advice_bg {
+    width: 1180px;
+    height: 260px;
+    margin: 40px auto;
+    background: url("../images/newbice/newbice_bg.png") center no-repeat;
+}
+
+.advice_text {
+    text-align: center;
+    color: #939aa6;
+    line-height: 25px;
+}
+
+.advice_btn {
+    width: 275px;
+    height: 38px;
+    margin: 0 auto;
+    color: #fff;
+    outline: none;
+    display: block;
+    line-height: 38px;
+    text-align: center;
+    background:#E4C670;
+    border-radius: 7px;
+}
+
+.advice_bottom {
+    font-size: 14px;
+    color: #939aa6;
+    text-align: center;
+    margin: 30px auto;
+}
+.advise{
+    padding-bottom: 10px;
+}
+
+.advice_bottom>p {
+    padding: 10px 0 20px 0;
+}
+
+.advice_bottom>p>span {
+    color: #E4C670;
+}
+
+/* 合作伙伴 */
+
+.friends {
+    width: 1200px;
+    background: #fff;
+    position: relative;
+    margin: 10px auto 20px auto;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.friends_title {
+    font-size: 22px;
+    color: #323232;
+    padding: 30px 0 0 5px;
+}
+
+.unborder {
+    margin-top: -30px;
+}
+
+.friends {
+    position: relative;
+    margin: 40px auto;
+}
+
+.friends_ul {
+    background: #fff;
+}
+
+.friends_ul>li {
+    width: 300px;
+    height: 40px;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.friends_ul>li>a {
+    width: 300px;
+    height: 40px;
+    display: block;
+    text-align: center;
+}
+
+.friends_ul>li>a>img{
+    width: 120px;
+    height: 40px;
+}
+
+
+.to_top {
+    width: 77px;
+    height: 75px;
+    bottom: 125px;
+    right: -107px;
+    position: absolute;
+    background: url("../images/index/to_top.png") center no-repeat
+}

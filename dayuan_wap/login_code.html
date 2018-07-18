@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+     <title>验证码登录</title>
+     <link rel="stylesheet" href="css/reset.css">
+     <link rel="stylesheet" href="css/public.css">
+     <script src="js/jquery-1.11.3.js"></script>
+     <script src="js/mobile.js"></script>
+</head>
+<body class="bg" id="login_wrap">
+     <div class="login_bg loginCode_bg">
+          <div class="reg_hd">欢迎加入网贷大院</div>
+          <div class="phone_box edge">
+               <input type="text" class="phone" id="phone" name="phone" placeholder="请输入手机号" onkeydown="enter(event)">
+          </div>
+          <div class="graph_box validate">
+               <input type="text" class="graph_identify" id="graph_identify" placeholder="请输入图形验证码">
+               <img class="animate_validate"  id="img" alt="" src="">
+          </div>
+          <div class="graph_box validate" id="vali">
+               <input type="text" class="graph_identify" id="graph_identify_1" placeholder="请输入短信验证码">
+               <input type="button" class="send_btn" id="send_btn" value="获取验证码" onclick="sendCode()">
+          </div>
+          <div class="graph_box validate login_code">
+               <a href="login.html" class="use_code" id="use_code">使用密码登录</a>
+               <a href="forgot_pwd.html" class="forget_pwd">忘记密码</a>
+          </div>
+          <div class="register_btn" id="login">
+               <input type="button" class="free_reg" id="dologin" value="登录">
+          </div>
+          <div class="login_ed">
+               <a href="register.html">还没有网贷大院账号？立即注册</a>
+          </div>
+     </div>
+     <!--错误提示-->
+     <div class="alertDark J_alertTip" style="display: none;"></div>
+     <script>
+          function enter(e){ //传入 event 
+               var e = e || window.event; 
+               if(e.keyCode == 13){ 
+                   
+               } 
+          }
+          // 错误提示
+          function alertDark(e){
+             $('.J_alertTip').show();
+             $('.J_alertTip').html(e);
+             setTimeout("$('.J_alertTip').hide(300)",1000);
+          }
+          // 表单验证
+          function check(){
+               // 判断用户名是否为空
+               if ($("#phone").val() === "") {
+                    alertDark('手机号不能为空!');
+                    return false;
+               }
+                // 判断手机格式
+               else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($("#phone").val()) || $("#phone").val().length < 11) {
+                    alertDark("手机号码格式不正确！");
+                    return false;
+               }
+               // 判断图形验证码是否为空
+                else if ($("#graph_identify").val() === "") {
+                    alertDark("图片验证码不能为空！");
+                    return false;
+                }//判断图形验证码的位数是否为4位
+                else  if($('#graph_identify').val().length !=4){
+                     alertDark("请输入4位数的图形验证码！");
+                }
+                // 判断密码是否为空
+               else if ($("#graph_identify_1").val() === "" || $("#graph_identify_1").val().length != 4) {
+                    alertDark("请输入4位验证码！");
+                    return false;
+               }
+               return true;
+          }
+           $("#img").hide();
+          //只有输入了手机号之后才能调用图形验证码的接口
+          var tel = $('#phone').val();
+          $('.animate_validate').click(function(){
+              var tel = $('#phone').val();
+              document.getElementById("img").src = 'http://test.wangdaidayuan.com:8080/wddy/api/h5/auth/piccode/?' + Math.random()+"&phone="+ tel;
+          })
+           // 手机号是否注册验证
+          $("#phone").blur(function () {
+               $("img").show();
+               var tel = $("#phone").val();
+               document.getElementById("img").src = "http://test.wangdaidayuan.com:8080/wddy/api/h5/auth/piccode/?phone=" +tel;
+          });
+          //获取短信验证码
+          // 判断是否输入了手机号、图形验证码
+          function judge_tel_piccode(){
+              if ($("#phone").val() === "") {
+                    alertDark('手机号不能为空!');
+                    return false;
+               }
+                // 判断手机格式
+               else if (!/^(13|15|18|14|17)[0-9]{9}$/.test($("#phone").val()) || $("#phone").val().length < 11) {
+                    alertDark("手机号码格式不正确！");
+                    return false;
+               }
+               // 判断图形验证码是否为空
+               else if ($("#graph_identify").val() === "") {
+                    alertDark("图片验证码不能为空！");
+                    return false;
+               }//判断图形验证码的位数是否为6位
+               else  if($('#graph_identify').val().length !=4){
+                    alertDark("请输入4位数的图形验证码！");
+               }
+               return true;
+          } 
+          var InterValObj; //timer变量，控制时间  
+          var count = 60; //间隔函数，1秒执行 ,(有效时间:1分钟)
+          var curCount;//当前剩余秒数  
+          var code = ""; //产生验证码  
+          var codeLength = 6;//验证码长度  
+          //输入手机号和图形验证码之后才能调用短信验证码接口
+          //发送手机短信验证码
+          function sendCode(){
+               if(!judge_tel_piccode()){
+                    return false;
+               }
+               curCount = count; 
+               // 产生验证码  
+              for ( var i = 0; i < codeLength; i++) {  
+                  code += parseInt(Math.random() * 9).toString();  
+              }  
+                // 设置button效果，开始计时
+              $("#send_btn").attr("disabled", "true");  
+              $("#send_btn").val("重新发送(" + curCount + ")");  
+              InterValObj = window.setInterval(SetRemainTime, 1000); // 启动计时器，1秒执行一次  
+              //发送验证码到手机
+             $.ajax({
+               type: "post",
+               url:"http://test.wangdaidayuan.com:8080/wddy/api/h5/getCode",
+               dataType: "json",
+               data: {
+                    "phone": $("#phone").val(),
+                    "picCode": $('#graph_identify').val(),
+                    "type": "login"
+               },
+               success: function(data){
+
+               },
+               error: function(){
+                    alertDark(data.msg);
+               }
+             });
+               
+          }
+          //timer处理函数  
+          function SetRemainTime() {
+              if (curCount == 0) {
+               //验证码失效,重新发送
+                  window.clearInterval(InterValObj);// 停止计时器  
+                  $("#send_btn").removeAttr("disabled");// 启用按钮  
+                  $("#dologin").removeAttr("disabled");//确定按钮  
+                  $("#send_btn").val("获取验证码");
+                  code = ""; // 清除验证码。如果不清除，过时间后，输入收到的验证码依然有效  
+              }else {
+                  curCount--;  
+                  $("#send_btn").val("重新发送(" + curCount + ")");  
+              }  
+          }  
+         //登录提交
+         $('#dologin').click(function(){
+               if(!check()){
+                    return false;
+               }
+               $.ajax({
+                    type: "post",
+                    url: 'http://test.wangdaidayuan.com:8080/wddy/api/h5/login',
+                    dataType: 'json',
+                    data:{
+                         "phone": $('#phone').val(),
+                         "code": $('#graph_identify_1').val(),
+                         "type": 2
+                    },
+                    success: function(data){
+                        if(data.code ==200){
+                            window.location.href = 'index.html';
+                       }else{
+                            alertDark(res.msg);
+                       }
+                    },
+                    error: function(){
+
+                    }
+               });
+         });
+     </script>
+</body>
+</html>

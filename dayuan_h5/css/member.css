@@ -1,0 +1,171 @@
+@charset "utf-8";
+body {
+    margin: 0 auto;
+    max-width: 750px;
+    background: #f2f2f2;
+}
+
+.banner {
+    height: 260px;
+    position: relative;
+    background: #2d2c2a;
+}
+
+.bg {
+    top: 20px;
+    right: 55px;
+    width: 323px;
+    height: 301px;
+    position: absolute;
+    background: url("../images/member/bg.png") center no-repeat;
+}
+
+.title {
+    left: 70px;
+    top: 80px;
+    width: 212px;
+    height: 80px;
+    position: absolute;
+    background: url("../images/member/title.png") center no-repeat;
+}
+
+.content {
+    background: #fff;
+}
+
+.blank1,
+.blank2 {
+    width: 750px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.blank1 {
+    height: 20px;
+}
+
+.blank2 {
+    height: 40px;
+}
+
+table {
+    width: 700px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table td:not(:first-child) {
+    width: 205px;
+    height: 55px;
+    color: #333;
+    font-size: 26px;
+    text-align: center;
+}
+
+table tr:first-child td:nth-child(2) {
+    text-align: left;
+    font-size: 30px;
+    padding: 0 0 0 15px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+table tr td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+    padding: 0 10px 0 0;
+}
+
+table tr td:last-child {
+    width: 180px;
+}
+
+table tr:first-child {
+    height: 80px !important;
+    background: #fff !important;
+}
+
+table tr:nth-child(2) {
+    background: #fff !important;
+}
+
+table tr:nth-child(2n+1) {
+    background: #f2f2f2;
+}
+
+table tr:nth-child(2) td:nth-child(3),
+table tr:nth-child(2) td:last-child {
+    color: #333 !important;
+}
+
+table tr:not(:first-child) td:nth-child(3) {
+    color: #4293F8;
+}
+
+table tr:not(:first-child) td:last-child {
+    color: #E23438;
+}
+
+.first,
+.rules,
+.second {
+    width: 39px;
+    height: 44px;
+}
+
+.first {
+    background: url("../images/member/first.png") center no-repeat;
+}
+
+.second {
+    background: url("../images/member/second.png") center no-repeat;
+}
+
+.rules {
+    background: url("../images/member/rules.png") center no-repeat;
+}
+
+.rules_table {
+    font-size: 26px;
+    line-height: 40px;
+}
+
+.rules_table>tbody>tr:nth-child(2) {
+    margin: 20px 0 0 0;
+}
+
+.rules_table>tbody>tr:not(:first-child) td:last-child {
+    color: #666;
+}
+
+.rules_table>tbody>tr:nth-child(2n+1) {
+    background: #fff !important;
+}
+
+.rules_table>tbody>tr:not(:first-child) td {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+.bottom {
+    width: 750px;
+    height: 95px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 95px;
+    margin: 20px auto 0 auto;
+}
+
+.up {
+    float: left;
+    width: 300px;
+    color: #333;
+    background: #fff;
+}
+
+.invite {
+    width: 450px;
+    color: #fff;
+    float: left;
+    background-image: linear-gradient(90deg, #e8ca71 0%, #b1903e 100%), linear-gradient( #d6b761, #d6b761);
+    background-blend-mode: normal, normal;
+}

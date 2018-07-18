@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+body{
+    background: #f2f2f2
+}
+
+.helpCenter{
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.helpCenter_top{
+    height: 130px;
+    background: #fff;
+    padding: 50px 0;
+}
+
+.phone,
+.service{
+    float: left;
+    height: 130px;
+    text-align: center;
+}
+
+.service{
+    width: 374px;
+    border-right: 1px solid #bbb;
+}
+
+.phone{
+    width: 375px;
+}
+
+.phone>a,
+.service>a{
+    width: 134px;
+    height: 114px;
+    display: inline-block;
+}
+
+.phone>p,
+.service>p{
+    font-size: 26px;
+}
+
+.service>a{
+    background: url("../images/helpCenter/service.png") center no-repeat;
+}
+
+.phone>a{
+    background: url("../images/helpCenter/phone.png") center no-repeat;
+}
+
+.questions{
+    background: #fff;
+    margin: 20px 0 0 0;
+}
+
+.question_top{
+    height: 106px;
+    border-bottom: 1px solid #bbb;
+}
+
+.question_ul>li{
+    float: left;
+    color:#6666;
+    font-size: 30px;
+    margin: 0 60px;
+    line-height: 105px;
+}
+
+.active{
+    color: #edbf60 !important;
+    border-bottom: 2px solid #daaa47 ;
+}
+
+.question_bottom{
+    padding: 50px 30px;
+}
+
+section{
+    text-align: justify;
+    height: 100%;
+}
+
+h3{
+    font-weight: normal;
+    font-size: 28px;
+}
+
+section>p{
+    line-height: 48px;
+    font-size: 26px;
+}
+
+.news,
+.register{
+    display: none;
+}

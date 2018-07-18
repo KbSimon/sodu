@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>平台信息</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="keywords" content="网贷大院投资理财">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/mobile.js"></script>
+</head>
+<body>
+	<div class="filter_bg">
+		<div class="filter_bj">
+			<div class="info_bj_box">
+				<ul class="plat_info_bj">
+					<li class="active lf">平台信息</li>
+					<li class="platform_context rt">平台背景</li>
+				</ul>
+				<div class="plat_tab_box">
+					<div class="confirm_info">
+						<div class="info_plat">
+							<h1 class="firm_name">丰丰网络科技（攸县）有限公司</h1>
+							<p class="invest_sum">注册资金：10000万元</p>
+							<p>公司法人：钱松友</p>
+							<p>所在地区：湖南攸县</p>
+							<p>客服电话：400-000-2883</p>
+							<p>政府监管：</p>
+							<p>监控企业业务数据，进行预警与违规报告输出</p>
+							<p>银行存管：</p>
+							<p>与湖南攸县农商银行签订存管合作协议</p>
+							<p>电子存证：</p>
+							<p>具有法律效力的电子协议，交易资料内容不被篡改</p>
+						</div>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.plat_info_bj>li').click(function(){
+			$(this).addClass('active').siblings().removeClass('active');
+			var index=$(this).index();
+			$('.plat_tab_box>div').eq(index).show().siblings().hide();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@charset "utf-8";
+.personal {
+    width: 1200px;
+    margin: 10px auto;
+}
+
+/* 左侧 */
+.personal_left {
+    float: left;
+    width: 270px;
+    height: 639px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.personal_nav>li{  
+  height: 55px;
+}
+
+.personal_nav>li>a{
+    width: 270px;
+    height: 55px;
+    overflow: hidden;
+    font-size: 16px;
+    color: #7f96a3;
+    line-height: 55px;
+    display: inline-block;
+}
+
+.personal_nav>li>a>div{
+    float: left;
+}
+
+.person_active{
+    background-color: #eff1f4;
+}
+
+.data_icon,
+.money_icon,
+.rebate_icon,
+.account_icon{
+    width: 60px;
+    height: 60px;
+    margin: 0px 5px 0 40px;
+}
+
+.account_icon{
+    background: url("../images/personalCenter/account_icon.png") center no-repeat;
+}
+
+.money_icon{
+    background: url("../images/personalCenter/money_icon.png") center no-repeat;
+}
+
+.rebate_icon{
+    background: url("../images/personalCenter/rebate_icon.png") center no-repeat;
+}
+
+.data_icon{
+    background: url("../images/personalCenter/data_icon.png") center no-repeat;
+}
+
+.personal_right {
+    float: right;
+    width: 900px;
+    height: 639px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.money_title,
+.rebate_title,
+.material_title{
+    width: 900px;
+    height: 30px;
+    font-size: 16px;
+    color: #7f96a3;
+    line-height: 30px;
+    padding-left: 5px;
+	background-color: #f9fafb;
+	border-bottom: solid 1px #e4ebf1;
+}
+
